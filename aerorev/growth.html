@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>aeroSALES</title>
+    <script>
+      (function () {
+      	function loadFont(a, b, c, d) { function e() { if (!window.FontFace) return !1; var a = new FontFace("t", 'url("data:application/font-woff2,") format("woff2")', {}), b = a.load(); try { b.then(null, function () { }) } catch (c) { } return "loading" === a.status } var f = navigator.userAgent, g = !window.addEventListener || f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !f.match(/Chrome/); if (!g) { var h = {}; try { h = localStorage || {} } catch (i) { } var j = "x-font-" + a, k = j + "url", l = j + "css", m = h[k], n = h[l], o = document.createElement("style"); if (o.rel = "stylesheet", document.head.appendChild(o), !n || m !== b && m !== c) { var p = c && e() ? c : b, q = new XMLHttpRequest; q.open("GET", p), q.onload = function () { q.status >= 200 && q.status < 400 && (h[k] = p, h[l] = q.responseText, d || (o.textContent = q.responseText)) }, q.send() } else o.textContent = n } }
+      	var supportsWoff2 = (function (win) {
+      		if (!("FontFace" in win)) {
+      			return false;
+      		}
+      		var f = new FontFace('t', 'url( "data:application/font-woff2;base64,d09GMgABAAAAAAIkAAoAAAAABVwAAAHcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABlYAgloKLEoBNgIkAxgLDgAEIAWDcgc1G7IEyB6SJAFID5YA3nAHC6h4+H7s27nP1kTyOoQkGuJWtNGIJKYznRI3VEL7IaHq985ZUuKryZKcAtJsi5eULwUybm9KzajBBhywZ5ZwoJNuwDX5C/xBjvz5DbsoNsvG1NGQiqp0NMLZ7JlnW+5MaM3HwcHheUQeiVokekHkn/FRdefvJaTp2PczN+I1Sc3k9VuX51Tb0Tqqf1deVXGdJsDOhz0/EffMOPOzHNH06pYkDDjs+P8fb/z/8n9Iq8ITzWywkP6PBMMN9L/O7vY2FNoTAkp5PpD6g1nV9WmyQnM5uPpAMHR2fe06jbfvzPriekVTQxC6lpKr43oDtRZfCATl5OVAUKykqwm9o8R/kg37cxa6eZikS7cjK4aIwoyh6jOFplhFrz2b833G3Jii9AjDUiAZ9AxZtxdEYV6imvRF0+0Nej3wu6nPZrTLh81AVcV3kmMVdQj6Qbe9qetzbuDZ7vXOlRrqooFSxCv6SfrDICA6rnHZXQPVcUHJYGcoqa3jVH7ATrjWBNYYkEqF3RFpVIl0q2JvMOJd7/TyjXHw2NyAuJpNaEbz8RTEVtCbSH7JrwQQOqwGl7sTUOtdBZIY2DKqKlvOmPvUxJaURAZZcviTT0SKHCXqzwc=" ) format( "woff2" )', {});
+      		f.load()['catch'](function () { });
+      		return f.status == 'loading' || f.status == 'loaded';
+      	})(window);
+      	// load font (woff)
+      	var ua = navigator.userAgent,
+      			fontFileUrl = "fonts/roboto-woff.css";
+      	if (supportsWoff2) {
+      		fontFileUrl = "fonts/roboto-woff2.css";
+      	}
+      	loadFont('custom_fonts', fontFileUrl);
+      })()
+    </script>
+    <script>
+      // Storing SVG Sprite in localStorage
+      ; (function (window, document) {
+      	'use strict';
+      	var file = 'images/svg/svg.svg',
+      			revision = new Date().getTime();
+      	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+      		return true;
+      	var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+      			request,
+      			data,
+      			insertIT = function () {
+      				document.body.insertAdjacentHTML('afterbegin', data);
+      			},
+      			insert = function () {
+      				if (document.body) insertIT();
+      				else document.addEventListener('DOMContentLoaded', insertIT);
+      			};
+      	if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+      		data = localStorage.getItem('inlineSVGdata');
+      		if (data) {
+      			insert();
+      			return true;
+      		}
+      	}
+      	try {
+      		request = new XMLHttpRequest();
+      		request.open('GET', file + '?v' + Date.now(), true);
+      		request.onload = function () {
+      			if (request.status >= 200 && request.status < 400) {
+      				data = request.responseText;
+      				insert();
+      				if (isLocalStorage) {
+      					localStorage.setItem('inlineSVGdata', data);
+      					localStorage.setItem('inlineSVGrev', revision);
+      				}
+      			}
+      		}
+      		request.send();
+      	}
+      	catch (e) { }
+      }(window, document));
+      
+    </script>
+    <link media="screen" rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page-overlay"></div>
+      <div class="page-fader"></div>
+      <div class="menu-panel js-menu-panel-parent">
+        <ul class="menu-panel__list">
+          <li><a class="js-menu-opener" href="#">
+              <svg>
+                <use xlink:href="#menu"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#dashboard"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#document"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#settings"></use>
+              </svg></a></li>
+        </ul>
+        <div class="menu-panel__block js-menu-block">
+          <div class="menu-panel__block__holder">
+            <h2>Reports</h2>
+            <ul>
+              <li><a href="#">Daily Growth</a></li>
+              <li><a href="#">Evolution</a></li>
+              <li><a href="#">Seat Factor by Day</a></li>
+              <li><a href="#">Seat Factor by Sector</a></li>
+              <li><a href="#">Seat Factor by Flight</a></li>
+              <li><a href="#">R’ASK by Day</a></li>
+              <li><a href="#">Day View</a></li>
+              <li><a href="#">Route View</a></li>
+              <li><a href="#">Sector View</a></li>
+              <li><a href="#">Sector Growth</a></li>
+              <li><a href="#">Pax &amp; YLD By Station</a></li>
+              <li><a href="#">ACT vs BGT</a></li>
+              <li><a href="#">OnD’s</a></li>
+            </ul>
+            <h3>My Queries</h3>
+            <ul>
+              <li><a href="#">My New Report</a></li>
+            </ul>
+            <div class="copyright">
+              <svg>
+                <use xlink:href="#logo-accelaero-big"></use>
+              </svg><span>&copy; 2018 All Rights Reserved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header-wrapper">
+          <div class="l-side"><strong class="logo"><a href="#">
+                      <svg>
+                        <use xlink:href="#logo"></use>
+                      </svg></a></strong><span class="logo-text">aero<span class="strong">REV</span></span>
+          </div>
+          <div class="r-side">
+            <div class="search-form">
+              <form action="#">
+                <fieldset>
+                  <input type="text" placeholder="Search">
+                  <button type="submit">
+                    <svg>
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <div class="header-menu">
+              <ul>
+                <li><a href="#">
+                    <svg>
+                      <use xlink:href="#envelope"></use>
+                    </svg><span class="unread-messages">12</span></a></li>
+                <li><a href="#">
+                    <svg>
+                      <use xlink:href="#help"></use>
+                    </svg></a></li>
+                <li><a href="#">Administrator
+                    <svg>
+                      <use xlink:href="#user"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-panel">
+        <h1 class="title">Growth</h1>
+        <div class="r-bar">
+          <ul class="btn-tools">
+            <li class="active"><a href="#">Day</a></li>
+            <li><a href="#">Route</a></li>
+            <li><a href="#">Region</a></li>
+          </ul>
+          <button class="blue-btn upload js-popup-opener" href="#create-query">
+            <svg>
+              <use xlink:href="#upload"></use>
+            </svg>Save to My Queries
+          </button>
+          <button class="blue-btn save">
+            <svg>
+              <use xlink:href="#save"></use>
+            </svg>Save
+          </button>
+          <button class="dark-grey-btn export">
+            <svg>
+              <use xlink:href="#exit"></use>
+            </svg>Export
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="white-content divider">
+          <div class="holder">
+            <div class="content-info">
+              <div class="content-panel">
+                <h3>Daily Growth</h3>
+                <div class="r-bar">
+                  <select class="selectpicker" title="All Routes" multiple data-live-search="true">
+                    <option>MCT</option>
+                    <option>SHJ</option>
+                    <option>DXB</option>
+                    <option selected>IST</option>
+                    <option>KWI</option>
+                    <option>AMM</option>
+                    <option>DOH</option>
+                    <option>IST</option>
+                    <option>AUH</option>
+                  </select>
+                  <select class="selectpicker" title="In &amp; Out">
+                    <option>My New Sales Report</option>
+                    <option>My New Report</option>
+                  </select>
+                  <select class="selectpicker" title="All Sectors">
+                    <option>My New Sales Report</option>
+                    <option>My New Report</option>
+                  </select>
+                  <select class="selectpicker" multiple>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option selected>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+                </div>
+              </div>
+              <div class="info-block">
+                <div class="forcast"><strong class="box-ttl">Forcast</strong>
+                  <form action="#">
+                    <fieldset>
+                      <div class="form-row">
+                        <label>Capacity</label>
+                        <input type="text" value="719,098">
+                      </div>
+                      <div class="form-row">
+                        <label>Pax</label>
+                        <input type="text" value="434,490">
+                      </div>
+                      <div class="form-row">
+                        <label>SF %</label>
+                        <input type="text" value="80%">
+                      </div>
+                      <div class="form-row">
+                        <label>Revenue</label>
+                        <input type="text" value="120,719,098">
+                      </div>
+                      <div class="form-row">
+                        <label>Avg. YLD</label>
+                        <input type="text" value="329.0">
+                      </div>
+                      <div class="form-row">
+                        <label>R/ASK (fils)</label>
+                        <input type="text" value="14.1">
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="chart-wrap">
+                  <div class="chart-legend"></div>
+                  <div class="d3chart bar-chart js-growth-chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="content-sidebar">
+              <h3>Select Graph Style</h3>
+              <ul class="chart-style">
+                <li class="active">
+                  <svg>
+                    <use xlink:href="#col-chart"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#horizontal-col-chart"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#line-chart"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#region-chart"></use>
+                  </svg>
+                </li>
+                <li><img src="images/pie-chart.svg" alt=""></li>
+              </ul>
+              <h3 class="not-indent">Schedule</h3><span class="note">Report Generation Frequency</span>
+              <div class="checkbox-wrap">
+                <div class="row">
+                  <input type="checkbox" checked="checked" id="daily">
+                  <label for="daily">Daily</label>
+                </div>
+                <div class="row">
+                  <input type="checkbox" id="weekly">
+                  <label for="weekly">Weekly</label>
+                </div>
+                <div class="row">
+                  <input type="checkbox" id="monthly">
+                  <label for="monthly">Monthly</label>
+                </div>
+                <div class="row">
+                  <input class="custom-date" type="checkbox" id="custom-date">
+                  <label for="custom-date">Custom Date</label>
+                </div>
+              </div>
+              <div class="datepicker-row inactive">
+                <div>
+                  <label class="input-label" for="from-date">From</label>
+                  <input class="datepicker" type="text" id="from-date" disabled>
+                </div>
+                <div>
+                  <label class="input-label" for="to-date">To</label>
+                  <input class="datepicker" type="text" id="to-date" disabled>
+                </div>
+              </div>
+              <h3 class="not-indent">Recepients</h3>
+              <div class="recepients-holder">
+                <label class="input-label" for="recepients">Email Address</label>
+                <input type="text" id="recepients"><a class="add" href="#">
+                  <svg>
+                    <use xlink:href="#add"></use>
+                  </svg></a>
+              </div>
+              <div class="recepients-list">
+                <div class="item"><span>shiran@isa.ae</span><a class="remove" href="#">
+                    <svg>
+                      <use xlink:href="#close"></use>
+                    </svg></a></div>
+                <div class="item"><span>aamir@airarabia.com</span><a class="remove" href="#">
+                    <svg>
+                      <use xlink:href="#close"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup js-popup" id="create-query">
+          <div class="popup-header"><strong>Create Query</strong><span class="close-popup js-popup-closer">
+              <svg>
+                <use xlink:href="#close"></use>
+              </svg></span></div>
+          <div class="popup-content">
+            <div class="create-query-wrap">
+              <div class="create-query-header">
+                <label for="query-name">Query Name</label>
+                <input type="text" id="query-name">
+              </div>
+              <div class="cols">
+                <div class="col">
+                  <h3 class="not-indent">Schedule</h3><span class="note">Report Generation Frequency</span>
+                  <div class="checkbox-wrap">
+                    <div class="row">
+                      <input type="checkbox" checked="checked" id="daily2">
+                      <label for="daily2">Daily</label>
+                    </div>
+                    <div class="row">
+                      <input type="checkbox" id="weekly2">
+                      <label for="weekly2">Weekly</label>
+                    </div>
+                    <div class="row">
+                      <input type="checkbox" id="monthly2">
+                      <label for="monthly2">Monthly</label>
+                    </div>
+                    <div class="row">
+                      <input class="custom-date" type="checkbox" id="custom-date2">
+                      <label for="custom-date2">Custom Date</label>
+                    </div>
+                  </div>
+                  <div class="datepicker-row inactive">
+                    <div>
+                      <label class="input-label" for="from-date2">From</label>
+                      <input class="datepicker" type="text" id="from-date2" disabled>
+                    </div>
+                    <div>
+                      <label class="input-label" for="to-date2">To</label>
+                      <input class="datepicker" type="text" id="to-date2" disabled>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <h3 class="not-indent">Recepients</h3>
+                  <div class="recepients-holder">
+                    <label class="input-label" for="recepients2">Email Address</label>
+                    <input type="text" id="recepients2"><a class="add" href="#">
+                      <svg>
+                        <use xlink:href="#add"></use>
+                      </svg></a>
+                  </div>
+                  <div class="recepients-list">
+                    <div class="item"><span>shiran@isa.ae</span><a class="remove" href="#">
+                        <svg>
+                          <use xlink:href="#close"></use>
+                        </svg></a></div>
+                    <div class="item"><span>aamir@airarabia.com</span><a class="remove" href="#">
+                        <svg>
+                          <use xlink:href="#close"></use>
+                        </svg></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="transparent-btn js-popup-closer">CANCEL</button>
+                <button class="blue-btn">UPDATE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

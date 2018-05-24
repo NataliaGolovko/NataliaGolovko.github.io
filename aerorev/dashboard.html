@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>aeroSALES</title>
+    <script>
+      (function () {
+      	function loadFont(a, b, c, d) { function e() { if (!window.FontFace) return !1; var a = new FontFace("t", 'url("data:application/font-woff2,") format("woff2")', {}), b = a.load(); try { b.then(null, function () { }) } catch (c) { } return "loading" === a.status } var f = navigator.userAgent, g = !window.addEventListener || f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !f.match(/Chrome/); if (!g) { var h = {}; try { h = localStorage || {} } catch (i) { } var j = "x-font-" + a, k = j + "url", l = j + "css", m = h[k], n = h[l], o = document.createElement("style"); if (o.rel = "stylesheet", document.head.appendChild(o), !n || m !== b && m !== c) { var p = c && e() ? c : b, q = new XMLHttpRequest; q.open("GET", p), q.onload = function () { q.status >= 200 && q.status < 400 && (h[k] = p, h[l] = q.responseText, d || (o.textContent = q.responseText)) }, q.send() } else o.textContent = n } }
+      	var supportsWoff2 = (function (win) {
+      		if (!("FontFace" in win)) {
+      			return false;
+      		}
+      		var f = new FontFace('t', 'url( "data:application/font-woff2;base64,d09GMgABAAAAAAIkAAoAAAAABVwAAAHcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABlYAgloKLEoBNgIkAxgLDgAEIAWDcgc1G7IEyB6SJAFID5YA3nAHC6h4+H7s27nP1kTyOoQkGuJWtNGIJKYznRI3VEL7IaHq985ZUuKryZKcAtJsi5eULwUybm9KzajBBhywZ5ZwoJNuwDX5C/xBjvz5DbsoNsvG1NGQiqp0NMLZ7JlnW+5MaM3HwcHheUQeiVokekHkn/FRdefvJaTp2PczN+I1Sc3k9VuX51Tb0Tqqf1deVXGdJsDOhz0/EffMOPOzHNH06pYkDDjs+P8fb/z/8n9Iq8ITzWywkP6PBMMN9L/O7vY2FNoTAkp5PpD6g1nV9WmyQnM5uPpAMHR2fe06jbfvzPriekVTQxC6lpKr43oDtRZfCATl5OVAUKykqwm9o8R/kg37cxa6eZikS7cjK4aIwoyh6jOFplhFrz2b833G3Jii9AjDUiAZ9AxZtxdEYV6imvRF0+0Nej3wu6nPZrTLh81AVcV3kmMVdQj6Qbe9qetzbuDZ7vXOlRrqooFSxCv6SfrDICA6rnHZXQPVcUHJYGcoqa3jVH7ATrjWBNYYkEqF3RFpVIl0q2JvMOJd7/TyjXHw2NyAuJpNaEbz8RTEVtCbSH7JrwQQOqwGl7sTUOtdBZIY2DKqKlvOmPvUxJaURAZZcviTT0SKHCXqzwc=" ) format( "woff2" )', {});
+      		f.load()['catch'](function () { });
+      		return f.status == 'loading' || f.status == 'loaded';
+      	})(window);
+      	// load font (woff)
+      	var ua = navigator.userAgent,
+      			fontFileUrl = "fonts/roboto-woff.css";
+      	if (supportsWoff2) {
+      		fontFileUrl = "fonts/roboto-woff2.css";
+      	}
+      	loadFont('custom_fonts', fontFileUrl);
+      })()
+    </script>
+    <script>
+      // Storing SVG Sprite in localStorage
+      ; (function (window, document) {
+      	'use strict';
+      	var file = 'images/svg/svg.svg',
+      			revision = new Date().getTime();
+      	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+      		return true;
+      	var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+      			request,
+      			data,
+      			insertIT = function () {
+      				document.body.insertAdjacentHTML('afterbegin', data);
+      			},
+      			insert = function () {
+      				if (document.body) insertIT();
+      				else document.addEventListener('DOMContentLoaded', insertIT);
+      			};
+      	if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+      		data = localStorage.getItem('inlineSVGdata');
+      		if (data) {
+      			insert();
+      			return true;
+      		}
+      	}
+      	try {
+      		request = new XMLHttpRequest();
+      		request.open('GET', file + '?v' + Date.now(), true);
+      		request.onload = function () {
+      			if (request.status >= 200 && request.status < 400) {
+      				data = request.responseText;
+      				insert();
+      				if (isLocalStorage) {
+      					localStorage.setItem('inlineSVGdata', data);
+      					localStorage.setItem('inlineSVGrev', revision);
+      				}
+      			}
+      		}
+      		request.send();
+      	}
+      	catch (e) { }
+      }(window, document));
+      
+    </script>
+    <link media="screen" rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page-overlay"></div>
+      <div class="page-fader"></div>
+      <div class="menu-panel js-menu-panel-parent">
+        <ul class="menu-panel__list">
+          <li><a class="js-menu-opener" href="#">
+              <svg>
+                <use xlink:href="#menu"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#dashboard"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#document"></use>
+              </svg></a></li>
+          <li><a href="#">
+              <svg>
+                <use xlink:href="#settings"></use>
+              </svg></a></li>
+        </ul>
+        <div class="menu-panel__block js-menu-block">
+          <div class="menu-panel__block__holder">
+            <h2>Reports</h2>
+            <ul>
+              <li><a href="#">Daily Growth</a></li>
+              <li><a href="#">Evolution</a></li>
+              <li><a href="#">Seat Factor by Day</a></li>
+              <li><a href="#">Seat Factor by Sector</a></li>
+              <li><a href="#">Seat Factor by Flight</a></li>
+              <li><a href="#">R’ASK by Day</a></li>
+              <li><a href="#">Day View</a></li>
+              <li><a href="#">Route View</a></li>
+              <li><a href="#">Sector View</a></li>
+              <li><a href="#">Sector Growth</a></li>
+              <li><a href="#">Pax &amp; YLD By Station</a></li>
+              <li><a href="#">ACT vs BGT</a></li>
+              <li><a href="#">OnD’s</a></li>
+            </ul>
+            <h3>My Queries</h3>
+            <ul>
+              <li><a href="#">My New Report</a></li>
+            </ul>
+            <div class="copyright">
+              <svg>
+                <use xlink:href="#logo-accelaero-big"></use>
+              </svg><span>&copy; 2018 All Rights Reserved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header-wrapper">
+          <div class="l-side"><strong class="logo"><a href="#">
+                      <svg>
+                        <use xlink:href="#logo"></use>
+                      </svg></a></strong><span class="logo-text">aero<span class="strong">REV</span></span>
+          </div>
+          <div class="r-side">
+            <div class="search-form">
+              <form action="#">
+                <fieldset>
+                  <input type="text" placeholder="Search">
+                  <button type="submit">
+                    <svg>
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <div class="header-menu">
+              <ul>
+                <li><a href="#">
+                    <svg>
+                      <use xlink:href="#envelope"></use>
+                    </svg><span class="unread-messages">12</span></a></li>
+                <li><a href="#">
+                    <svg>
+                      <use xlink:href="#help"></use>
+                    </svg></a></li>
+                <li><a href="#">Administrator
+                    <svg>
+                      <use xlink:href="#user"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+      </div>
+      <div class="control-panel">
+        <h1 class="title">Dashboard</h1>
+        <div class="r-bar">
+          <select class="selectpicker" multiple>
+            <option>G9</option>
+            <option selected="selected">30</option>
+            <option>E5</option>
+            <option>9P</option>
+          </select>
+          <div class="temp-wrap">
+            <select class="selectpicker" title="Last 24 Hours">
+              <option>Last 24 Hours</option>
+              <option>Last 12 Hours</option>
+              <option>Last 8 Hours</option>
+            </select>
+            <ul class="btn-tools">
+              <li class="active"><a href="#">Day</a></li>
+              <li><a href="#">Route</a></li>
+              <li><a href="#">Region</a></li>
+            </ul>
+            <button class="dark-grey-btn customise">
+              <svg>
+                <use xlink:href="#tuning"></use>
+              </svg>Customise
+            </button>
+            <select class="selectpicker" title="My Queries">
+              <option>My New Sales Report</option>
+              <option>My New Report</option>
+            </select>
+            <button class="dark-grey-btn export">
+              <svg>
+                <use xlink:href="#exit"></use>
+              </svg>Export
+            </button>
+            <button class="blue-btn upload">
+              <svg>
+                <use xlink:href="#upload"></use>
+              </svg>Upload RAW Data
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="popup js-popup chart-popup" id="pax-popup">
+          <div class="popup-header"><strong>Yield Trends by RUN Date - May 2017 vs May 2016</strong><span class="close-popup js-popup-closer">
+              <svg>
+                <use xlink:href="#close"></use>
+              </svg></span></div>
+          <div class="popup-content">
+            <div class="line-chart-v2"><span class="axis-label y-axis-label">YEILD AED</span><span class="axis-label x-axis-label">DAY</span>
+              <div class="popup-chart-placeholder"></div>
+              <button class="blue-btn js-popup-closer">CLOSE</button>
+            </div>
+          </div>
+        </div>
+        <div class="boxes-wrap">
+          <div class="box">
+            <div class="ttl-row">
+              <div class="l-side">
+                <h4 class="sub-ttl">Growth</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="d3chart bar-chart js-growth-chart"></div>
+          </div>
+          <div class="box">
+            <div class="ttl-row"><a class="link js-popup-opener" href="#pax-popup">Pax & Yld Contribution by STN</a>
+              <div class="l-side">
+                <h4 class="sub-ttl">Passenger</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="d3chart bar-chart js-passenger-chart"></div>
+          </div>
+          <div class="box">
+            <div class="ttl-row">
+              <div class="l-side">
+                <h4 class="sub-ttl">Capacity</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="d3chart bar-chart js-capacity-chart"></div>
+          </div>
+          <div class="box">
+            <div class="ttl-row">
+              <div class="l-side">
+                <h4 class="sub-ttl">Top Stations</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="line-chart"></div>
+          </div>
+          <div class="box">
+            <div class="ttl-row"><a class="link js-popup-opener" href="#pax-popup">Pax & Yld Contribution by STN</a>
+              <div class="l-side">
+                <h4 class="sub-ttl">Revenue</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="d3chart bar-chart js-revenue-chart"></div>
+          </div>
+          <div class="box">
+            <div class="ttl-row">
+              <div class="l-side">
+                <h4 class="sub-ttl">Yeild</h4>
+              </div>
+              <div class="r-side">
+                <ul class="btn-tools">
+                  <li class="active"><a href="#">Day</a></li>
+                  <li><a href="#">Route</a></li>
+                  <li><a href="#">Region</a></li>
+                </ul>
+                <div class="tools-box"><a href="#">
+                    <svg>
+                      <use xlink:href="#settings"></use>
+                    </svg></a><a href="#">
+                    <svg>
+                      <use xlink:href="#fullscreen"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+            <div class="d3chart bar-chart js-yeild-chart"></div>
+          </div>
+        </div>
+        <div class="table-block">
+          <div class="ttl-row">
+            <div class="l-side">
+              <h4 class="sub-ttl">Seat Factor</h4>
+              <ul class="btn-tools">
+                <li class="active"><a href="#">Day</a></li>
+                <li><a href="#">Route</a></li>
+                <li><a href="#">Region</a></li>
+              </ul>
+              <ul class="btn-tools red">
+                <li class="active"><a href="#">Current Month</a></li>
+                <li><a href="#">M+1</a></li>
+                <li><a href="#">M+2</a></li>
+                <li><a href="#">M+3</a></li>
+                <li><a href="#">M+4</a></li>
+                <li><a href="#">M+5</a></li>
+                <li><a href="#">M+6</a></li>
+              </ul>
+            </div>
+            <div class="r-side">
+              <div class="tools-box"><a href="#">
+                  <svg>
+                    <use xlink:href="#settings"></use>
+                  </svg></a><a href="#">
+                  <svg>
+                    <use xlink:href="#fullscreen"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="js-color-table">
+              <tr>
+                <th>Dates</th>
+                <th><span>1</span><span>Mon</span></th>
+                <th><span>2</span><span>Tue</span></th>
+                <th><span>3</span><span>Wed</span></th>
+                <th><span>4</span><span>Thu</span></th>
+                <th><span>5</span><span>Fri</span></th>
+                <th><span>6</span><span>Sat</span></th>
+                <th><span>7</span><span>Sun</span></th>
+                <th><span>8</span><span>Mon</span></th>
+                <th><span>9</span><span>Tue</span></th>
+                <th><span>10</span><span>Wed</span></th>
+                <th><span>11</span><span>Thu</span></th>
+                <th><span>12</span><span>Fri</span></th>
+                <th><span>13</span><span>Sat</span></th>
+                <th><span>14</span><span>Sun</span></th>
+                <th><span>15</span><span>Mon</span></th>
+                <th><span>16</span><span>Tue</span></th>
+                <th><span>17</span><span>Wed</span></th>
+                <th><span>18</span><span>Thu</span></th>
+                <th><span>19</span><span>Fri</span></th>
+                <th><span>20</span><span>Sat</span></th>
+                <th><span>21</span><span>Sun</span></th>
+                <th><span>22</span><span>Mon</span></th>
+                <th><span>23</span><span>Tue</span></th>
+                <th><span>24</span><span>Wed</span></th>
+                <th><span>25</span><span>Thu</span></th>
+                <th><span>26</span><span>Fri</span></th>
+                <th><span>27</span><span>Sat</span></th>
+                <th><span>28</span><span>Sun</span></th>
+                <th><span>29</span><span>Mon</span></th>
+                <th><span>30</span><span>Tue</span></th>
+                <th><span>31</span><span>Wed</span></th>
+                <th>TOTAL</th>
+              </tr>
+              <tr>
+                <td data-attr="add-cell">SF</td>
+                <td>86</td>
+                <td>150</td>
+                <td>150</td>
+                <td>120</td>
+                <td>155</td>
+                <td>34</td>
+                <td>34</td>
+                <td>143</td>
+                <td>62</td>
+                <td>130</td>
+                <td>93</td>
+                <td>61</td>
+                <td>45</td>
+                <td>61</td>
+                <td>167</td>
+                <td>166</td>
+                <td>150</td>
+                <td>21</td>
+                <td>130</td>
+                <td>90</td>
+                <td>42</td>
+                <td>27</td>
+                <td>123</td>
+                <td>75</td>
+                <td>143</td>
+                <td>82</td>
+                <td>159</td>
+                <td>166</td>
+                <td>42</td>
+                <td>51</td>
+                <td>100</td>
+                <td data-attr="add-cell" data-total="total-cell">1500</td>
+              </tr>
+              <tr>
+                <td data-attr="add-cell">YLD</td>
+                <td>76.5</td>
+                <td>43.1</td>
+                <td>64.1</td>
+                <td>67.9</td>
+                <td>52.5</td>
+                <td>66.3</td>
+                <td>52.0</td>
+                <td>82.5</td>
+                <td>66.3</td>
+                <td>43.7</td>
+                <td>61.6</td>
+                <td>49.0</td>
+                <td>76.5</td>
+                <td>34.9</td>
+                <td>57.8</td>
+                <td>68.5</td>
+                <td>85.2</td>
+                <td>38.4</td>
+                <td>65.1</td>
+                <td>75.9</td>
+                <td>44.5</td>
+                <td>43.1</td>
+                <td>45.7</td>
+                <td>65.1</td>
+                <td>70.8</td>
+                <td>28.7</td>
+                <td>62.3</td>
+                <td>44.2</td>
+                <td>61.6</td>
+                <td>59.7</td>
+                <td>86.7</td>
+                <td data-attr="add-cell" data-total="total-cell">337.4</td>
+              </tr>
+              <tr>
+                <td data-attr="add-cell">Rev<span>(In Millions)</span></td>
+                <td>45.7</td>
+                <td>55.8</td>
+                <td>76.5</td>
+                <td>80.8</td>
+                <td>52.0</td>
+                <td>34.4</td>
+                <td>64.1</td>
+                <td>53.6</td>
+                <td>77.9</td>
+                <td>85.3</td>
+                <td>36.4</td>
+                <td>86.1</td>
+                <td>44.6</td>
+                <td>53.1</td>
+                <td>86.8</td>
+                <td>51.4</td>
+                <td>45.8</td>
+                <td>27.5</td>
+                <td>44.2</td>
+                <td>80.8</td>
+                <td>80.8</td>
+                <td>35.2</td>
+                <td>44.2</td>
+                <td>66.3</td>
+                <td>65.1</td>
+                <td>68.4</td>
+                <td>41.0</td>
+                <td>66.3</td>
+                <td>76.5</td>
+                <td>50.9</td>
+                <td>49.0</td>
+                <td data-attr="add-cell" data-total="total-cell">335.2</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
