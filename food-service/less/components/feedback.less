@@ -1,0 +1,237 @@
+.feedback-item {
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px 1px rgba(118, 152, 159, 0.1);
+	margin-bottom: 19px;
+	padding: 20px 30px;
+	.transition(all, 0.5s);
+	&:hover {
+		box-shadow: 0 8px 9px 2px rgba(118, 152, 159, 0.16);
+	}
+	.sub-ttl {
+		.inner-page & {
+			color: @black-color;
+			white-space: normal;
+		}
+	}
+}
+.user-side {
+	float: left;
+	width: 220px;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+.user-photo {
+	float: left;
+	margin-right: 18px;
+	position: relative;
+	img {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		vertical-align: top;
+	}
+	.soc-icon {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background-color: @yellow-color;
+		text-indent: -9999px;
+		&:after {
+			background: url("../images/sprite.png");
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			content: '';
+		}
+		&.fb {
+			&:after {
+				background-position: -214px 0;
+				width: 8px;
+				height: 15px;
+				margin: -7px 0 0 -4px;
+			}
+		}
+	}
+}
+.user-info {
+	overflow: hidden;
+	color: @grey-color;
+	.name {
+		color: #000;
+	}
+	span {
+		display: block;
+	}
+}
+.feedback-body {
+	overflow: hidden;
+	padding-left: 30px;
+	border-left: 1px solid #d2dddf;
+	position: relative;
+	.rating-list {
+		position: absolute;
+		top: 5px;
+		right: 0;
+		padding: 0;
+	}
+	.show-more {
+		display: none;
+		text-decoration: none;
+		color: @red-color;
+		font-family: @pts-regular;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.mark {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 32px;
+	text-align: center;
+	& > img {
+		position: relative;
+		top: 2px;
+		width: 17px;
+		height: 19px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&.like {
+		background-color: #18bf18;
+		box-shadow: 0 3px 8px 1px rgba(24, 191, 24, 0.24);
+	}
+	&.dislike {
+		background-color: #c2102f;
+		box-shadow: 0 3px 8px 1px rgba(194, 16, 47, 0.24);
+		img {
+			transform: rotate(-180deg) scale(-1, 1);
+			top: 4px;
+		}
+	}
+}
+.feedback-header {
+	padding: 0 140px 0 49px;
+}
+.feedback-comment {
+	font-family: @pts-italic;
+	p {
+		margin: 0;
+	}
+}
+.answer-block {
+	background-color: @grey-light-color;
+	margin: 20px -20px -10px;
+	padding: 15px 20px;
+	box-sizing: border-box;
+	clear: both;
+	color: @grey-color;
+	font-family: @pts-italic;
+	.answer-header {
+		margin-bottom: 7px;
+		color: @black-color;
+		font-family: @pts-regular;
+	}
+}
+.rating {
+	margin-bottom: 10px;
+	ul {
+		display: inline-block;
+		padding-left: 5px;
+	}
+	li {
+		display: inline-block;
+		margin: 0 2px;
+		vertical-align: middle;
+		cursor: pointer;
+		svg {
+			width: 20px;
+			height: 19px;
+			fill: #fff;
+			stroke: #000;
+		}
+		&.active {
+			svg {
+				fill: @orange-color;
+				stroke: @orange-color;
+			}
+		}
+	}
+}
+.feedback-box {
+	.r-side {
+		margin-bottom: 10px;
+		& > span {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+	}
+	.jq-selectbox__select, .jq-selectbox__dropdown li {
+		padding-left: 40px;
+		position: relative;
+		&:before {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			margin-top: -10px;
+			content: '';
+		}
+		&:after {
+			background-image: url("../images/icons-07.svg");
+			width: 10px;
+			height: 11px;
+			position: absolute;
+			left: 15px;
+			top: 50%;
+			margin-top: -5px;
+			content: '';
+		}
+	}
+	.yes {
+		.jq-selectbox__select {
+			&:before {
+				background-color: #18bf18;
+			}
+			&:after {
+				top: 48%;
+			}
+		}
+	}
+	li.yes {
+		&:before {
+			background-color: #18bf18;
+		}
+		&:after {
+			top: 48%;
+		}
+	}
+	.no {
+		.jq-selectbox__select {
+			&:before {
+				background-color: @red-color;
+			}
+			&:after {
+				transform: rotate(-180deg) scale(-1, 1);
+			}
+		}
+	}
+	li.no {
+		&:before {
+			background-color: @red-color;
+		}
+		&:after {
+			transform: rotate(-180deg) scale(-1, 1);
+		}
+	}
+}

@@ -1,0 +1,240 @@
+.sidebar-section {
+	.sidebar-menu {
+		padding: 20px 0;
+		li {
+			margin: 0 0 15px;
+			font: 24px/30px @boomboom;
+			color: @grey-color;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				text-decoration: none;
+				color: @yellow-color;
+				.transition(color, 0.5s);
+				&:hover {
+					color: @red-color;
+				}
+				&.active {
+					color: @black-color;
+				}
+			}
+			span {
+				font: 14px/18px @pts-regular;
+				position: relative;
+				top: -10px;
+				left: 2px;
+			}
+		}
+	}
+	&.mobile-only {
+		display: none;
+	}
+	&.mobile-menu-only {
+		position: absolute;
+		top:-9999px;
+		left:-9999px;
+	}
+	.points {
+		padding: 20px 0;
+		svg {
+			width: 25px;
+			height: 26px;
+			display: inline-block;
+			margin: 0 13px 0 0;
+			vertical-align: top;
+		}
+		strong {
+			font: 24px/26px @pts-bold;
+			color: @red-color;
+			display: inline-block;
+			vertical-align: top;
+			margin: 5px 0 0;
+		}
+		h3 {
+			font-size: 24px;
+			line-height:30px;
+			margin: 0 0 10px;
+		}
+		p {
+			margin: 0 0 10px;
+		}
+	}
+}
+.profile-section {
+	background-color: #fff;
+	border-radius: 4px;
+	.shadow();
+	padding: 20px 30px;
+	box-sizing: border-box;
+	position: relative;
+	margin-bottom: 30px;
+	h2 {
+		font-size: 32px;
+		line-height:36px;
+		margin: 0 0 15px;
+	}
+}
+.profile-form {
+	input[type="text"], input[type="password"] {
+		font-size: 16px;
+		line-height: 20px;
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 40px;
+	}
+	.password-wrap {
+		position: relative;
+		width:252px;
+		.show-password {
+			position: absolute;
+			top:9px;
+			z-index: 10;
+			right:15px;
+			cursor: pointer;
+			width:24px;
+			height:19px;
+			img {
+				display: block;
+				max-width:24px;
+				max-height:19px;
+			}
+		}
+	}
+	.edit-personal-info {
+		text-decoration: none;
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		color: @red-color;
+		cursor: pointer;
+		&:after {
+			content:"";
+			position: absolute;
+			bottom:1px;
+			left: 0;
+			width: 100%;
+			border-bottom: 1px dashed fade(@red-color, 30%);
+		}
+	}
+}
+.table-wrapper {
+	margin: 0 -30px;
+}
+.profile-table {
+	width:100%;
+	th {
+		text-align: left;
+		color: @grey-color;
+		text-transform: uppercase;
+		background: @grey-light-color;
+		font-size: 12px;
+		line-height:14px;
+		padding: 20px 30px 12px;
+	}
+	td {
+		padding: 20px 30px;
+		font-size: 19px;
+		border-top: 2px solid @grey-light-color;
+		color:#000;
+		strong {
+			font: 18px @pts-bold;
+		}
+		.hidden-mobile-ttl {
+			color: @grey-color;
+			text-transform: uppercase;
+			font-size: 12px;
+			line-height:14px;
+			display: none;
+			width: 40%;
+		}
+		.profile-table-text {
+			overflow: hidden;
+			display: block;
+		}
+	}
+	tr {
+		&:last-of-type {
+			td {
+				padding-bottom: 0;
+			}
+		}
+	}
+	.order-date {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		color: @red-color;
+		padding: 0 0 0 23px;
+		cursor: pointer;
+		background: url('../images/sprite.png') -96px -53px no-repeat;
+		&:after {
+			content:"";
+			position: absolute;
+			bottom:1px;
+			left: 23px;
+			width: calc(~"100% - 23px");
+			border-bottom: 1px dashed fade(@red-color, 30%);
+		}
+		&.opened {
+			background: url('../images/sprite.png') -96px -74px no-repeat;
+		}
+	}
+	.bonuses-amount {
+		svg {
+			width:21px;
+			height:20px;
+			margin: 0 7px 0 0;
+			display: inline-block;
+			vertical-align: top;
+		}
+		span {
+			display: inline-block;
+			vertical-align: top;
+			margin: 2px 0 0 ;
+		}
+	}
+	.order-status {
+		display: flex;
+		align-items: center;
+		svg {
+			margin: 0 10px 0 0;
+		}
+		span {
+			padding: 2px 0 0;
+		}
+		&.done {
+			svg {
+				width:25px;
+				height:20px;
+			}
+		}
+		&.pending {
+			svg {
+				width:24px;
+				height: 24px;
+				fill:@grey-color;
+			}
+		}
+	}
+	.slide-row {
+		display: none;
+		&>td {
+			border:0;
+			padding-top: 0;
+		}
+		.slide-content {
+			border-radius: 4px;
+			background: @grey-light-color;
+			font-size: 14px;
+			padding: 10px 0;
+		}
+		table {
+			width:74%;
+			td {
+				font-size: 16px;
+				padding:0 20px;
+			}
+		}
+	}
+}

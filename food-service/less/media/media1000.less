@@ -1,0 +1,150 @@
+@media screen and (max-width: 1279px) {
+	.container {
+		padding: 0 20px;
+	}
+	.sign-box {
+		& > span {
+			display: none;
+		}
+	}
+	.top-menu {
+		width: 84%;
+		.logged & {
+			width: auto;
+			display: block;
+			li {
+				display: inline-block;
+				margin-right: 20px;
+			}
+		}
+	}
+	.logo {
+		width: 208px;
+		height: 68px;
+	}
+	.center-box {
+		& > strong {
+			font-size: 20px;
+			line-height: 26px;
+		}
+	}
+	.delivery-item {
+		.rating-row {
+			clear: left;
+			.top-card & {
+				clear: none;
+			}
+		}
+		.top-card & {
+			.sub-ttl {
+				font-size: 36px;
+				line-height: 40px;
+			}
+		}
+	}
+	.feedback-body {
+		p {
+			max-height: 100px;
+			overflow: hidden;
+
+		}
+		.show-more {
+			display: inline-block;
+		}
+	}
+	.alltext {
+		p {
+			max-height: 9999px;
+		}
+	}
+	.catalog-item {
+		width: calc(~"50% - 10px");
+		.tooltip-info {
+			.inner-page & {
+				left:0;
+			}
+		}
+		&:nth-child(2n) {
+			.tooltip-info {
+				.inner-page & {
+					right: 0;
+					left: auto;
+				}
+			}
+		}
+	}
+	.tooltip {
+		.tooltip-info {
+			width: 320px;
+		}
+	}
+	.sidebar, .aside {
+		float: none;
+	}
+	.cols-wrap {
+		float: left;
+	}
+	.main-content {
+		.catalog-page & {
+			width: calc(~"100% - 285px");
+			padding: 0 0 0 30px;
+		}
+	}
+	.nav-row {
+		.soc-widget {
+			display: none;
+		}
+	}
+	.sale-block {
+		display: block;
+	}
+	.sale-item {
+		margin-bottom: 20px;
+		.none-sidebar & {
+			width: 100%;
+		}
+	}
+	.sale-info {
+		flex: 3 0 0;
+	}
+	.promo-wrap {
+		flex-wrap: wrap;
+	}
+	.white-box {
+		width: calc(~"33.3333% - 10px");
+	}
+	.form-container {
+		.set-price-box {
+			input[type=text] {
+				&.small {
+					width: 125px;
+				}
+			}
+		}
+	}
+	.main-content {
+		.feedback-box {
+			.flex-container {
+				flex-wrap: wrap;
+				& > * {
+					width: calc(~"50% - 5px");
+					margin: 0 0 10px;
+				}
+			}
+			.rating {
+				text-align: right;
+			}
+			.soc-links {
+				margin: 10px 0;
+			}
+			.r-side {
+				& > span {
+					margin: 0;
+				}
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+}

@@ -1,0 +1,154 @@
+.catalog-block {
+	padding: 70px 0 30px;
+	.banner {
+		//float: right;
+		display: block;
+		padding: 14px;
+		border: 1px solid #d2dddf;
+		border-radius: 3px;
+		flex-basis: 268px;
+		margin-left: 20px;
+		box-sizing: border-box;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+.catalog-wrap {
+	//float: left;
+	//width: calc(~"100% - 312px");
+	flex-wrap: wrap;
+	flex: 3 0;
+}
+.catalog-holder {
+	align-items: flex-start;
+}
+.catalog-item {
+	padding: 13px 15px 10px;
+	width: calc(~"33.3333% - 14px");
+	box-shadow: 0 1px 3px 1px rgba(118, 152, 159, 0.16);
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+	margin-bottom: 30px;
+	.transition(all, 0.5s);
+	.item-hover();
+	a {
+		text-decoration: none;
+		img {
+			width: 100%;
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+	.price {
+		font: 24px/28px @pts-bold;
+		color: @black-color;
+	}
+	&:nth-child(3n) {
+		.tooltip-info {
+			.inner-page & {
+				right: 0;
+			}
+		}
+	}
+}
+.amount-box {
+	background: #eef3f4;
+	border-radius: 2px;
+	padding: 7px 7px 12px;
+	width: 150px;
+	box-sizing: border-box;
+	justify-content: space-around;
+	position: relative;
+	font-size: 18px;
+	color: @black-color;
+	.arrow {
+		width: 15px;
+		height: 7px;
+		opacity: 0.5;
+		margin-left: 7px;
+		display: inline-block;
+	}
+	.add-to-cart{
+		display: block;
+		svg {
+			width: 25px;
+			height: 32px;
+			fill: @red-color;
+			vertical-align: middle;
+		}
+		&:hover {
+			animation: ring 8s ease-in-out infinite;
+			transform-origin: 50% 4px;
+		}
+	}
+	.amount-value {
+		position: relative;
+		top: 4px;
+		cursor: pointer;
+	}
+}
+.drop-count {
+	position: absolute;
+	top: -9999em;
+	right: 7px;
+	width: 213px;
+	box-sizing: border-box;
+	border: 2px solid @yellow-color;
+	border-radius: 2px;
+	padding: 10px;
+	background-color: #fff;
+	z-index: 2;
+}
+.number-plus-minus {
+	background-color: #eef3f4;
+	border-radius: 2px;
+	padding: 17px 15px;
+	position: relative;
+	width: 190px;
+	box-sizing: border-box;
+	.mark-amount {
+		position: absolute;
+		top: 19px;
+		right: 70px;
+	}
+	.amount {
+		position: relative;
+		top: 2px;
+		left: -2px;
+	}
+	.minus {
+		svg {
+			width: 23px;
+			height: 2px;
+			opacity: 0.5;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.plus {
+		svg {
+			width: 20px;
+			height: 20px;
+			opacity: 0.5;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	input[type="text"] {
+		background: none;
+		border: 0;
+		width: 20px;
+		text-align: center;
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		font: 18px/24px @pts-regular;
+		color: @black-color;
+	}
+}
+.size {
+	font: 20px/24px @pts-bold;
+}

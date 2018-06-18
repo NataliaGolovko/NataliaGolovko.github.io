@@ -1,0 +1,173 @@
+.sidebar {
+	float: left;
+	width: 285px;
+}
+.menu-list {
+	li {
+		a {
+			color: @black-color;
+			text-decoration: none;
+			display: inline-block;
+			margin: 0 0 0 -29px;
+			padding: 0 0 0 29px;
+			border-left: 2px solid transparent;
+			.transition(color, 0.2s);
+			&:hover {
+				color: @orange-color;
+			}
+			&.active {
+				color: @grey-color;
+				border-left-color: @orange-color;
+			}
+		}
+	}
+}
+.sidebar-section {
+	padding: 20px 29px;
+	background-color: #fff;
+	border-radius: 4px;
+	.shadow();
+	margin-bottom: 10px;
+	ul {
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}
+.search-box {
+	.holder {
+		border: 1px solid @black-color;
+		border-radius: 3px;
+		background-color: @grey-light-color;
+	}
+	.search {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		float: left;
+		padding: 0;
+		outline: none;
+		margin: 8px 0 0 12px;
+		svg {
+			width: 17px;
+			height: 17px;
+			fill: @orange-color;
+			display: block;
+		}
+	}
+	input[type="text"] {
+		border: 0;
+		background: none;
+		margin: 0;
+		padding: 8px 15px 8px 8px;
+		width: calc(~"100% - 39px");
+		box-sizing: border-box;
+		font: 12px/16px @pts-regular;
+		float: left;
+		outline: none;
+		.placeholder();
+	}
+}
+.sidebar-info {
+	padding-bottom: 18px;
+	display: none;
+	&.opened {
+		display: block;
+	}
+}
+.sidebar-box {
+	border-top: 2px solid @grey-light-color;
+	font-size: 18px;
+	margin: 0 -29px;
+	padding: 0 29px;
+	&:first-child {
+		margin-top: -20px;
+		border-top: 0;
+	}
+	&:last-child {
+		margin-bottom: -20px;
+	}
+}
+.box-ttl {
+	font: 24px/28px @boomboom;
+	display: block;
+	color: @orange-color;
+	padding: 21px 0;
+	cursor: pointer;
+	position: relative;
+	.transition(color, 0.5s);
+	svg {
+		width: 15px;
+		height: 7px;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		margin-top: -4px;
+		opacity: 0.5;
+	}
+	&:hover {
+		color: @red-color;
+	}
+	&.opened {
+		color: @black-color;
+		svg {
+			transform: rotate(-180deg);
+		}
+	}
+}
+.slider-bar {
+	width: 210px;
+}
+.slider-bar-holder {
+	border: 1px solid @black-color;
+	border-radius: 3px;
+	background-color: @grey-light-color;
+	font-size: 12px;
+	color: @grey-color;
+	.input-holder {
+		display: inline-block;
+		border-right: 1px solid @black-color;
+		padding: 0 9px 0 12px;
+		&:last-child {
+			border-right: 0;
+		}
+		span {
+			&:nth-of-type(2){
+				color: @black-color;
+				font-size: 16px;
+			}
+		}
+		input[type="text"] {
+			background: none;
+			border: 0;
+			text-align: right;
+			font: 16px/20px @pts-regular;
+			color: @black-color;
+			padding: 9px 5px;
+			margin: 0;
+			display: inline-block;
+			width: 46px;
+			outline: none;
+		}
+	}
+}
+.aside {
+	float: right;
+	width: 285px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 20px 20px 5px;
+	box-sizing: border-box;
+	.shadow();
+	img {
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+.cols-wrap {
+	&.left-col {
+		float: left;
+		width: 285px;
+	}
+}

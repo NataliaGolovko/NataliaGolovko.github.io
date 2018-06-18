@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Prines</title>
+    <link media="screen" rel="stylesheet" href="css/animate.css">
+    <link media="screen" rel="stylesheet" href="css/owl.carousel.min.css">
+    <link media="screen" rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link media="screen" rel="stylesheet" href="css/jquery.formstyler.css">
+    <link media="screen" rel="stylesheet" href="css/main.css">
+    <script>
+      // Storing SVG Sprite in localStorage
+      ; (function (window, document) {
+      	'use strict';
+      	var file = 'images/svg/svg.svg',
+      		revision = new Date().getTime();
+      	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+      		return true;
+      	var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+      		request,
+      		data,
+      		insertIT = function () {
+      			document.body.insertAdjacentHTML('afterbegin', data);
+      		},
+      		insert = function () {
+      			if (document.body) insertIT();
+      			else document.addEventListener('DOMContentLoaded', insertIT);
+      		};
+      	if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+      		data = localStorage.getItem('inlineSVGdata');
+      		if (data) {
+      			insert();
+      			return true;
+      		}
+      	}
+      	try {
+      		request = new XMLHttpRequest();
+      		request.open('GET', file + '?v' + Date.now(), true);
+      		request.onload = function () {
+      			if (request.status >= 200 && request.status < 400) {
+      				data = request.responseText;
+      				insert();
+      				if (isLocalStorage) {
+      					localStorage.setItem('inlineSVGdata', data);
+      					localStorage.setItem('inlineSVGrev', revision);
+      				}
+      			}
+      		}
+      		request.send();
+      	}
+      	catch (e) {
+      	}
+      }(window, document));
+      
+    </script>
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/owl.carousel.min.js"></script>
+    <script src="js/vendors/jquery.formstyler.min.js"></script>
+    <script src="js/vendors/jquery-ui.min.js"></script>
+    <script src="js/vendors/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/vendors/jquery.input.mask.min.js"></script>
+    <script src="js/vendors/jquery.dotdotdot.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="menu-fader"></div>
+      <header class="header">
+        <div class="top-header">
+          <div class="container holder"><a class="logo" href="#">Принес время для Вас</a>
+            <ul class="top-menu flex-container">
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Блюда
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a class="active" href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                  <li><a href="#">Бургеры</a></li>
+                  <li><a href="#">Салаты</a></li>
+                  <li><a href="#">Первые блюда</a></li>
+                  <li><a href="#">Паста</a></li>
+                  <li><a href="#">Лапша</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Бургеры
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Салаты
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Обеды
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li><a href="#">О проекте</a></li>
+              <li><a href="#">Как подключиться</a></li>
+              <li><a href="#">Соглашение</a></li>
+              <li><a href="#">Бонусная программа</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul><a class="menu-opener js-menu-opener" href="#"><span>open menu</span></a>
+            <div class="sign-box"><span>Привет! А мы тебя не узнали :)</span><a class="sign-link open-popup" href="#login-popup"><span>Войти</span>
+                <svg>
+                  <use xlink:href="#icons-09"></use>
+                </svg></a></div><a class="header-sale" href="#">
+              <svg>
+                <use xlink:href="#icons-08"></use>
+              </svg><strong>Акции</strong></a><a class="header-cart" href="#">
+              <svg>
+                <use xlink:href="#icons-10"></use>
+              </svg><strong>300 &#x20bd;</strong></a>
+          </div>
+        </div>
+        <div class="header-area">
+          <div class="container flex-container"><a class="logo" href="#">Принес время для Вас</a>
+            <div class="center-box hidden-box">
+              <svg>
+                <use xlink:href="#icons-13"></use>
+              </svg><strong>уже<span class="red">30 заказов!</span></strong><span>доставили сегодня</span>
+            </div>
+            <div class="center-box">
+              <svg>
+                <use xlink:href="#icons-11"></use>
+              </svg><strong><a href="tel:88005506601">8 (800) 550-660-1</a></strong><span>круглосуточно!</span>
+            </div>
+            <div class="btn-order"><a class="red-btn" href="#">Универсальный заказ</a></div>
+          </div>
+        </div>
+        <div class="search-row">
+          <div class="container flex-container">
+            <div class="search-wrap">
+              <form action="#">
+                <fieldset>
+                  <div class="holder">
+                    <select class="grey-bg js-select-style">
+                      <option>Санкт-Петербург</option>
+                      <option>Москва</option>
+                      <option>Санкт-Петербург</option>
+                    </select>
+                    <input type="text" placeholder="Выбрать улицу">
+                    <button class="red-btn">Найти<span> рестораны</span></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div><a class="header-sale" href="#">
+              <svg>
+                <use xlink:href="#icons-08"></use>
+              </svg><strong>Акции</strong></a><a class="header-cart" href="#">
+              <svg>
+                <use xlink:href="#icons-10"></use>
+              </svg><strong>300 &#x20bd;</strong></a>
+          </div>
+        </div>
+      </header>
+      <div class="content inner-page none-sidebar">
+        <div class="container">
+          <ul class="breadcrumbs">
+            <li><a href="#">Главная</a></li>
+            <li>Акции</li>
+          </ul>
+          <div class="content-wrap holder">
+            <div class="main-content">
+              <div class="cart-item flex-container">
+                <div class="product holder">
+                  <div class="prod-pict"><a href="#"><img src="images/img11.jpg"></a></div>
+                  <div class="prod-name"><a class="sub-ttl" href="#">Калифорния</a><span>Суши Весла</span></div>
+                </div>
+                <div class="prod-amount">
+                  <div class="number-plus-minus">
+                    <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                  </div>
+                </div>
+                <div class="prod-price"><strong>459 &#x20bd;</strong></div>
+                <div class="delete-btn">
+                  <svg>
+                    <use xlink:href="#icons-23"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="cart-item flex-container">
+                <div class="product holder">
+                  <div class="prod-pict"><a href="#"><img src="images/img12.jpg"></a></div>
+                  <div class="prod-name"><a class="sub-ttl" href="#">О рицу маки</a><span>Суши Весла</span></div>
+                </div>
+                <div class="prod-amount">
+                  <div class="number-plus-minus">
+                    <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                  </div>
+                </div>
+                <div class="prod-price"><strong>4590 &#x20bd;</strong></div>
+                <div class="delete-btn">
+                  <svg>
+                    <use xlink:href="#icons-23"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="cart-item flex-container">
+                <div class="product holder">
+                  <div class="prod-pict"><a href="#"><img src="images/img13.jpg"></a></div>
+                  <div class="prod-name"><a class="sub-ttl" href="#">Чизбургер</a><span>Макдональдс</span></div>
+                </div>
+                <div class="prod-amount">
+                  <div class="number-plus-minus">
+                    <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                  </div>
+                </div>
+                <div class="prod-price"><strong>490 &#x20bd;</strong></div>
+                <div class="delete-btn">
+                  <svg>
+                    <use xlink:href="#icons-23"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="total-row flex-container">
+                <div class="left-info"><span>Вы заработаете:</span>
+                  <svg>
+                    <use xlink:href="#icons-15"></use>
+                  </svg><strong>1740</strong>
+                </div>
+                <div class="center-info"><span>Доставка: 440 &#x20bd;</span></div>
+                <div class="right-info"><span>Наценка за вес: 100 &#x20bd;</span></div>
+              </div>
+              <div class="form-container">
+                <div class="box">
+                  <form action="#">
+                    <fieldset>
+                      <div class="flex-container form-block">
+                        <div class="form-col">
+                          <h3>Доставка заказа</h3>
+                          <div class="form-row holder geo-row">
+                            <select class="js-select-style large">
+                              <option>Санкт-Петербург</option>
+                              <option>Санкт-Петербург</option>
+                              <option>Санкт-Петербург</option>
+                            </select>
+                            <input class="geo" type="text" placeholder="Адрес доставки">
+                          </div>
+                          <div class="form-row flex-container half-width">
+                            <input class="medium" type="text" placeholder="Ваше имя">
+                            <input class="mask medium" type="text" placeholder="+7  916  142-57-92">
+                          </div>
+                          <div class="form-row flex-container">
+                            <select class="js-select-style medium">
+                              <option>Сегодня 31.10</option>
+                              <option>Сегодня 30.10</option>
+                              <option>Сегодня 29.10</option>
+                            </select>
+                            <select class="js-select-style quarter">
+                              <option>с 10:00</option>
+                              <option>с 11:00</option>
+                              <option>с 12:00</option>
+                            </select>
+                            <select class="js-select-style quarter">
+                              <option>до 22:00</option>
+                              <option>до 21:00</option>
+                              <option>до 20:00</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-col">
+                          <textarea class="full-height" placeholder="Дополнительная информация: номер офиса или квартиры, названиекомпании и тд."></textarea>
+                        </div>
+                      </div>
+                      <div class="flex-container form-block">
+                        <div class="form-col">
+                          <h3>Промокод</h3>
+                          <input class="large" type="text" placeholder="Укажите промокод">
+                        </div>
+                      </div>
+                      <div class="flex-container form-block">
+                        <div class="form-col">
+                          <h3>Оплата</h3>
+                          <div class="radio-block">
+                            <div class="radio-holder">
+                              <input type="radio" id="radio6" name="radio-group3" checked>
+                              <label for="radio6">Онлайн картой</label>
+                            </div>
+                            <div class="radio-holder">
+                              <input type="radio" id="radio7" name="radio-group3">
+                              <label for="radio7">У курьера картой</label>
+                            </div>
+                            <div class="radio-holder">
+                              <input type="radio" id="radio8" name="radio-group3">
+                              <label for="radio8">У курьера наличными</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-col">
+                          <div class="set-price-box">
+                            <input type="text" placeholder="Нужна сдача с"><span class="currency">&#x20bd;</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="result-row cart-result">
+                        <div class="flex-container">
+                          <div class="form-col flex-container"><strong>Итого: 1740 &#x20bd;</strong></div>
+                          <div class="form-col"><a class="red-btn" href="#">Отправить заявку</a></div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="description-block">
+          <div class="container flex-container">
+            <div class="description">
+              <p>«Сегодня никого не удивишь различными сервисами доставки еды!», - так считают многие и глубоко ошибаются. Ведь как замечательно насладиться изысканными блюдами из самых<a class="red-color" href="#"> различных ресторанов и кофеен вашего города?</a> Суши, пицца, пироги, напитки на заказ – это уже буквально вчерашний день, а вот полный ассортимент блюд, меню (включая эксклюзивные авторские блюда от именитого шеф-повара) – это огромный шаг вперёд. Вся доставка еды на дом и другие города на страницах нашего сайта. Сервис приёма заказов «ПРИНЕС», как раз и включает в себя большинство перспективных и модных заведений вашего города, которые осуществляют доставку еды на дом.</p>
+            </div>
+            <div class="description">
+              <p>При этом<a class="red-color" href="#"> список интересных заведений</a> постоянно расширяется, что помогает пользователям Интернета, находясь в уютной домашней обстановке, в скучном сером будничном офисе или на зажигательной дружеской вечеринке, осуществить<a class="red-color" href="#"> заказ выбранных блюд</a> прямо «к месту событий». Устройте вашей девушке или молодому человеку романтический ужин, заказав любимую лазанью, ароматный чизкейк или порцию вкуснейших сэндвичей буквально за несколько минут – за пару кликов мышкой!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-area holder">
+            <div class="footer-col"><img class="footer-logo" src="images/logo.png">
+              <ul class="soc-links">
+                <li><a class="fb" href="#">facebook</a></li>
+                <li><a class="tw" href="#">twitter</a></li>
+                <li><a class="vk" href="#">vk</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="footer-menu flex-container">
+                <ul>
+                  <li><a href="#">О проекте</a></li>
+                  <li><a href="#">Контакты</a></li>
+                  <li><a href="#">Информация для партнеров</a></li>
+                  <li><a href="#">Пользовательское соглашение</a></li>
+                  <li><a href="#">Бонусные баллы</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Доставка пиццы</a></li>
+                  <li><a href="#">Доставка суши</a></li>
+                  <li><a href="#">Доставка еды</a></li>
+                  <li><a href="#">Доставка обедов</a></li>
+                  <li><a href="#">Доставка продуктов</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-col"><strong class="phone">8 (800) 550-660-1</strong><a class="red-btn" href="#">Универсальный заказ</a></div>
+          </div>
+          <div class="footer-row holder">
+            <div class="footer-col"><span>© prines.ru, 2016 — 2017.</span></div>
+            <div class="footer-col"><span>Быстрая и качественная доставка вашего заказа</span></div>
+            <div class="footer-col"><span>Дизайн —<a href="#">alexeybychkov.com</a></span></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="login-popup popup" id="login-popup">
+      <div class="popup-heading">
+        <ul>
+          <li class="active">Вход</li>
+          <li><a class="open-popup" href="#register-popup">Регистрация</a></li>
+        </ul>
+      </div>
+      <form action="#">
+        <fieldset>
+          <div class="fields-wrap">
+            <input type="tel" placeholder="Номер телефона">
+            <input type="password" placeholder="Пароль"><a class="reminder red-color" href="#">Напомнить</a>
+          </div>
+          <ul class="soc-links">
+            <li><a class="fb" href="#">facebook</a></li>
+            <li><a class="tw" href="#">twitter</a></li>
+            <li><a class="vk" href="#">vk</a></li>
+            <li><a class="google" href="#">google</a></li>
+            <li><a class="instagram" href="#">instagram</a></li>
+            <li><a class="classmates" href="#">classmates</a></li>
+          </ul>
+          <div class="btn-wrap">
+            <input class="red-btn" type="submit" value="Войти">
+          </div>
+        </fieldset>
+      </form>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="register-popup popup" id="register-popup">
+      <div class="popup-heading">
+        <ul>
+          <li><a class="open-popup" href="#login-popup">Вход</a></li>
+          <li class="active">Регистрация</li>
+        </ul>
+      </div>
+      <form action="#">
+        <fieldset>
+          <div class="fields-wrap">
+            <input type="tel" placeholder="Номер телефона">
+            <input type="password" placeholder="Пароль">
+            <input type="password" placeholder="Пароль еще раз">
+          </div>
+          <div class="checkbox-holder">
+            <input type="checkbox" id="check-agree" checked>
+            <label for="check-agree">Согласен с<a class="red-color" href="#"> правилами сервиса</a></label>
+          </div>
+          <ul class="soc-links">
+            <li><a class="fb" href="#">facebook</a></li>
+            <li><a class="tw" href="#">twitter</a></li>
+            <li><a class="vk" href="#">vk</a></li>
+            <li><a class="google" href="#">google</a></li>
+            <li><a class="instagram" href="#">instagram</a></li>
+            <li><a class="classmates" href="#">classmates</a></li>
+          </ul>
+          <div class="btn-wrap">
+            <input class="red-btn" type="submit" value="Зарегистрироваться">
+          </div>
+        </fieldset>
+      </form>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="payment-popup popup successful">
+      <div class="popup-header"><strong>Подтверждение оплаты</strong></div>
+      <div class="popup-body">
+        <div class="icon">
+          <svg>
+            <use xlink:href="#icons-12"></use>
+          </svg>
+        </div><strong class="title">Оплата прошла успешно!</strong>
+        <p>Спасибо, все в порядке. Наш менеджер свяжется с вами совсем скоро!<br>До связи :)</p><a class="red-btn" href="#">Закрыть</a>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="payment-popup popup failed">
+      <div class="popup-header"><strong>Подтверждение оплаты</strong></div>
+      <div class="popup-body">
+        <div class="icon"><strong>:(</strong></div><strong class="title">Оплата не прошла</strong>
+        <p>Что-то не так. Попробуйте еще раз.</p><a class="red-btn" href="#">Закрыть</a>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="popup-order popup" id="order-popup">
+      <div class="popup-header"><strong>Все о пирогах</strong></div>
+      <div class="popup-main flex-container">
+        <div class="left-col">
+          <div class="section"><strong class="section-ttl js-block-opener opened">Пицца
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block opened">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-1">
+                  <label for="popup-radio-1">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-2" checked>
+                  <label for="popup-radio-2">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-3">
+                  <label for="popup-radio-3">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-4">
+                  <label for="popup-radio-4">Барбекю</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-5">
+                  <label for="popup-radio-5">Вегетарианская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-6">
+                  <label for="popup-radio-6">Гавайская</label>
+                </div>
+                <div class="item-price"><span>+30 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-7">
+                  <label for="popup-radio-7">Гавайская Карри</label>
+                </div>
+                <div class="item-price"><span>+140 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-8">
+                  <label for="popup-radio-8">Де люкс</label>
+                </div>
+                <div class="item-price"><span>+110 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-9">
+                  <label for="popup-radio-9">Калифорния</label>
+                </div>
+                <div class="item-price"><span>+170 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-10">
+                  <label for="popup-radio-10">Манхеттен</label>
+                </div>
+                <div class="item-price"><span>+230 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="section"><strong class="section-ttl js-block-opener">Тесто
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-11">
+                  <label for="popup-radio-11">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-12" checked>
+                  <label for="popup-radio-12">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-13">
+                  <label for="popup-radio-13">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="section"><strong class="section-ttl js-block-opener">Ингредиенты
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-21">
+                  <label for="popup-radio-21">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-22" checked>
+                  <label for="popup-radio-22">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-23">
+                  <label for="popup-radio-23">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-col"><a class="item-picture" href="#"><img src="images/img03.jpg"></a><strong class="item-cost">300 &#x20bd;</strong>
+          <div class="number-plus-minus">
+            <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+          </div><a class="red-btn" href="#">Добавить в заказ</a>
+        </div>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="fader"></div>
+  </body>
+</html>

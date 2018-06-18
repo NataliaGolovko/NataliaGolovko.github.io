@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Prines</title>
+    <link media="screen" rel="stylesheet" href="css/animate.css">
+    <link media="screen" rel="stylesheet" href="css/owl.carousel.min.css">
+    <link media="screen" rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link media="screen" rel="stylesheet" href="css/jquery.formstyler.css">
+    <link media="screen" rel="stylesheet" href="css/main.css">
+    <script>
+      // Storing SVG Sprite in localStorage
+      ; (function (window, document) {
+      	'use strict';
+      	var file = 'images/svg/svg.svg',
+      		revision = new Date().getTime();
+      	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+      		return true;
+      	var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+      		request,
+      		data,
+      		insertIT = function () {
+      			document.body.insertAdjacentHTML('afterbegin', data);
+      		},
+      		insert = function () {
+      			if (document.body) insertIT();
+      			else document.addEventListener('DOMContentLoaded', insertIT);
+      		};
+      	if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+      		data = localStorage.getItem('inlineSVGdata');
+      		if (data) {
+      			insert();
+      			return true;
+      		}
+      	}
+      	try {
+      		request = new XMLHttpRequest();
+      		request.open('GET', file + '?v' + Date.now(), true);
+      		request.onload = function () {
+      			if (request.status >= 200 && request.status < 400) {
+      				data = request.responseText;
+      				insert();
+      				if (isLocalStorage) {
+      					localStorage.setItem('inlineSVGdata', data);
+      					localStorage.setItem('inlineSVGrev', revision);
+      				}
+      			}
+      		}
+      		request.send();
+      	}
+      	catch (e) {
+      	}
+      }(window, document));
+      
+    </script>
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/owl.carousel.min.js"></script>
+    <script src="js/vendors/jquery.formstyler.min.js"></script>
+    <script src="js/vendors/jquery-ui.min.js"></script>
+    <script src="js/vendors/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/vendors/jquery.input.mask.min.js"></script>
+    <script src="js/vendors/jquery.dotdotdot.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="menu-fader"></div>
+      <header class="header">
+        <div class="top-header">
+          <div class="container holder"><a class="logo" href="#">Принес время для Вас</a>
+            <ul class="top-menu flex-container">
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Блюда
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a class="active" href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                  <li><a href="#">Бургеры</a></li>
+                  <li><a href="#">Салаты</a></li>
+                  <li><a href="#">Первые блюда</a></li>
+                  <li><a href="#">Паста</a></li>
+                  <li><a href="#">Лапша</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Бургеры
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Салаты
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li class="accordion-menu-item"><a class="menu-accordion-opener box-ttl js-block-opener" href="#">Обеды
+                  <svg>
+                    <use xlink:href="#icons-18"></use>
+                  </svg></a>
+                <ul class="menu-list menu-accordion-list js-opened-block">
+                  <li><a href="#">Пицца</a></li>
+                  <li><a href="#">Суши</a></li>
+                  <li><a href="#">Бурритос</a></li>
+                </ul>
+              </li>
+              <li><a href="#">О проекте</a></li>
+              <li><a href="#">Как подключиться</a></li>
+              <li><a href="#">Соглашение</a></li>
+              <li><a href="#">Бонусная программа</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul><a class="menu-opener js-menu-opener" href="#"><span>open menu</span></a>
+            <div class="sign-box"><span>Привет! А мы тебя не узнали :)</span><a class="sign-link open-popup" href="#login-popup"><span>Войти</span>
+                <svg>
+                  <use xlink:href="#icons-09"></use>
+                </svg></a></div><a class="header-sale" href="#">
+              <svg>
+                <use xlink:href="#icons-08"></use>
+              </svg><strong>Акции</strong></a><a class="header-cart" href="#">
+              <svg>
+                <use xlink:href="#icons-10"></use>
+              </svg><strong>300 &#x20bd;</strong></a>
+          </div>
+        </div>
+        <div class="header-area">
+          <div class="container flex-container"><a class="logo" href="#">Принес время для Вас</a>
+            <div class="center-box hidden-box">
+              <svg>
+                <use xlink:href="#icons-13"></use>
+              </svg><strong>уже<span class="red">30 заказов!</span></strong><span>доставили сегодня</span>
+            </div>
+            <div class="center-box">
+              <svg>
+                <use xlink:href="#icons-11"></use>
+              </svg><strong><a href="tel:88005506601">8 (800) 550-660-1</a></strong><span>круглосуточно!</span>
+            </div>
+            <div class="btn-order"><a class="red-btn" href="#">Универсальный заказ</a></div>
+          </div>
+        </div>
+        <div class="search-row">
+          <div class="container flex-container">
+            <div class="search-wrap">
+              <form action="#">
+                <fieldset>
+                  <div class="holder">
+                    <select class="grey-bg js-select-style">
+                      <option>Санкт-Петербург</option>
+                      <option>Москва</option>
+                      <option>Санкт-Петербург</option>
+                    </select>
+                    <input type="text" placeholder="Выбрать улицу">
+                    <button class="red-btn">Найти<span> рестораны</span></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div><a class="header-sale" href="#">
+              <svg>
+                <use xlink:href="#icons-08"></use>
+              </svg><strong>Акции</strong></a><a class="header-cart" href="#">
+              <svg>
+                <use xlink:href="#icons-10"></use>
+              </svg><strong>300 &#x20bd;</strong></a>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <div class="main-slider owl-carousel js-slider">
+          <div class="slide-item" style="background-image: url('images/slide02.jpg');">
+            <div class="container"><strong class="slide-ttl">Грузинская<br>кухня</strong><a class="red-btn" href="#">Подробнее</a></div>
+          </div>
+          <div class="slide-item" style="background-image: url('images/slide02.jpg');">
+            <div class="container"><strong class="slide-ttl">Грузинская<br>кухня 2</strong><a class="red-btn" href="#">Подробнее</a></div>
+          </div>
+        </div>
+        <div class="category">
+          <div class="container flex-container">
+            <div class="category-item"><a href="#"><img src="images/sushi.jpg">Суши</a></div>
+            <div class="category-item active"><a href="#"><img src="images/pizza.jpg">Пицца</a></div>
+            <div class="category-item"><a href="#"><img src="images/burger.jpg">ФастФуд</a></div>
+            <div class="category-item"><a href="#"><img src="images/lunch.jpg">Обеды</a></div>
+            <div class="category-item"><a href="#"><img src="images/soup.jpg">Супы</a></div>
+            <div class="category-item"><a href="#"><img src="images/salad.jpg">Салаты</a></div>
+          </div>
+        </div>
+        <div class="wrap-content">
+          <div class="container">
+            <h1 class="style-h1">Популярные доставки</h1>
+            <div class="delivery-wrap flex-container">
+              <div class="delivery-item">
+                <div class="top-info holder"><span class="promo-code">Промо коды</span>
+                  <div class="item-logo"><img src="images/sm-logo01.jpg"></div><a class="sub-ttl" href="#">Доставка из Мака Сургут</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Бургеры</a></li>
+                    <li><a href="#">Американская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>2123 оценки</span>
+                    <ul class="payment-list">
+                      <li class="wallet">
+                        <svg>
+                          <use xlink:href="#icons-03"></use>
+                        </svg>
+                      </li>
+                      <li class="mastercard">
+                        <svg>
+                          <use xlink:href="#icons-01"></use>
+                        </svg>
+                      </li>
+                      <li class="visa">
+                        <svg>
+                          <use xlink:href="#icons-02"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">300 &#x20bd;</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">&mdash;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">60 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">10:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <div class="top-info holder">
+                  <div class="item-logo"><img src="images/sm-logo02.jpg"></div><a class="sub-ttl" href="#">KFC Нижневартовск</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Бургеры</a></li>
+                    <li><a href="#">Американская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>2123 оценки</span>
+                    <ul class="payment-list">
+                      <li class="wallet">
+                        <svg>
+                          <use xlink:href="#icons-03"></use>
+                        </svg>
+                      </li>
+                      <li class="mastercard">
+                        <svg>
+                          <use xlink:href="#icons-01"></use>
+                        </svg>
+                      </li>
+                      <li class="visa">
+                        <svg>
+                          <use xlink:href="#icons-02"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">бесплатно</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">100 &#x20bd;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">30 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">09:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <div class="top-info holder">
+                  <div class="item-logo"><img src="images/sm-logo03.jpg"></div><a class="sub-ttl" href="#">Универсальная доставка</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Европейская</a></li>
+                    <li><a href="#">Китайская</a></li>
+                    <li><a href="#">Русская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>212 оценки</span>
+                    <ul class="payment-list">
+                      <li class="wallet">
+                        <svg>
+                          <use xlink:href="#icons-03"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">бесплатно</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">200 &#x20bd;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">40 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">10:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <div class="top-info holder"><span class="promo-code">Промо коды</span>
+                  <div class="item-logo"><img src="images/sm-logo04.jpg"></div><a class="sub-ttl" href="#">Кофе есть</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Бургеры</a></li>
+                    <li><a href="#">Американская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>223 оценки</span>
+                    <ul class="payment-list">
+                      <li class="mastercard">
+                        <svg>
+                          <use xlink:href="#icons-01"></use>
+                        </svg>
+                      </li>
+                      <li class="visa">
+                        <svg>
+                          <use xlink:href="#icons-02"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">бесплатно</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">&mdash;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">30 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">10:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <div class="top-info holder">
+                  <div class="item-logo"><img src="images/sm-logo05.jpg"></div><a class="sub-ttl" href="#">Японапапа</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Европейская</a></li>
+                    <li><a href="#">Китайская</a></li>
+                    <li><a href="#">Русская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>223 оценки</span>
+                    <ul class="payment-list">
+                      <li class="wallet">
+                        <svg>
+                          <use xlink:href="#icons-03"></use>
+                        </svg>
+                      </li>
+                      <li class="mastercard">
+                        <svg>
+                          <use xlink:href="#icons-01"></use>
+                        </svg>
+                      </li>
+                      <li class="visa">
+                        <svg>
+                          <use xlink:href="#icons-02"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">бесплатно</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">200 &#x20bd;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">40 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">10:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-item">
+                <div class="top-info holder">
+                  <div class="item-logo"><img src="images/sm-logo06.jpg"></div><a class="sub-ttl" href="#">Студия правильного питания Fffffff</a>
+                  <ul class="labels-list">
+                    <li><a href="#">Бургеры</a></li>
+                    <li><a href="#">Американская</a></li>
+                  </ul>
+                  <div class="rating-row">
+                    <ul class="rating-list">
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li class="active">
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg>
+                          <use xlink:href="#icons-05"></use>
+                        </svg>
+                      </li>
+                    </ul><span>223 оценки</span>
+                    <ul class="payment-list">
+                      <li class="wallet">
+                        <svg>
+                          <use xlink:href="#icons-03"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bottom-info">
+                  <div class="flex-container">
+                    <div class="cell"><span class="cell-header">Доставка</span><strong class="cell-value">бесплатно</strong></div>
+                    <div class="cell"><span class="cell-header">Мин. заказ</span><strong class="cell-value">&mdash;</strong></div>
+                    <div class="cell"><span class="cell-header">Время доставки</span><strong class="cell-value">30 минут</strong></div>
+                    <div class="cell"><span class="cell-header">Время работы</span><strong class="cell-value">10:00 — 23:00</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-block">
+          <div class="container">
+            <h1 class="style-h1">Популярные блюда</h1>
+            <div class="catalog-holder flex-container">
+              <div class="catalog-wrap flex-container">
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img01.jpg"><span class="sub-ttl">Картофель фри стфри</span></a>
+                  <div class="price-row flex-container"><strong class="price">58 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart open-popup" href="#order-popup">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img02.jpg"><span class="sub-ttl">Сандерс</span></a>
+                  <div class="price-row flex-container"><strong class="price">58 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart open-popup" href="#order-popup">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img03.jpg"><span class="sub-ttl">Альфредо<span class="size"> 40 см</span></span></a>
+                  <div class="price-row flex-container"><strong class="price">89 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart" href="#">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img04.jpg"><span class="sub-ttl">Язык с хреном</span></a>
+                  <div class="price-row flex-container"><strong class="price">420 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart" href="#">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img05.jpg"><span class="sub-ttl">Язык с хреном</span></a>
+                  <div class="price-row flex-container"><strong class="price">240 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart" href="#">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-item">
+                  <div class="tooltip">
+                    <svg>
+                      <use xlink:href="#icons-27"></use>
+                    </svg>
+                    <div class="tooltip-info"><span class="close-tooltip-mobiles">X</span>
+                      <p>Для создания изысканных суси и роллов наши шеф-повара японской кухни используют лучшие ингредиенты: отборный рис, аутентичные соусы, безупречно свежую рыбу и морепродукты, привезенные прямо из Страны восходящего солнца! Яркие роллы приготовлены по авторскому рецепту "Азбуки Вкуса": их начинка состоит из аппетитного лосося, мягкого сливочно-творожного сыра, хрустящих огурцов и пикантно-острого зеленого лука.</p>
+                    </div>
+                  </div><a href="#"><img src="images/img06.jpg"><span class="sub-ttl">Товары из супермаркета</span></a>
+                  <div class="price-row flex-container"><strong class="price">50 &#x20bd;</strong>
+                    <div class="amount-box flex-container"><span class="amount-value js-amount-opener"><span class="js-amount-value">1</span> шт
+                        <svg class="arrow">
+                          <use xlink:href="#icons-18"></use>
+                        </svg></span><a class="add-to-cart" href="#">
+                        <svg>
+                          <use xlink:href="#icons-10"></use>
+                        </svg></a>
+                      <div class="drop-count js-amount-adjuster">
+                        <div class="number-plus-minus">
+                          <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><a class="banner" href="#"><img src="images/banner.jpg"></a>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-content">
+          <div class="container">
+            <h1 class="style-h1">Отзывы<br>о доставках<span class="arrow-img"><img src="images/arrow-img.png" alt=""></span></h1>
+            <div class="feedback-item holder">
+              <div class="user-side holder">
+                <div class="user-photo"><img src="images/default-photo.png"></div>
+                <div class="user-info"><span class="name">Алена</span><span class="date">23 октября</span><span class="time">в 17:34</span></div>
+              </div>
+              <div class="feedback-body">
+                <div class="feedback-header"><span class="mark like"><img src="images/icons-07.svg" alt=""></span><strong class="sub-ttl"><a href="#">Студия правильного питания Food</a></strong>
+                  <ul class="rating-list">
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+                <div class="feedback-comment">
+                  <p>Заказала вчера в папас бургер, доставку привезли, как и указали, но!!! Еда была испорчена! Причём испорчена не в смысле помята, а именно испорчена. Начну с клаб сенвича: во-первых, он не с индейкой, как указано, во-вторых, я его даже есть не рискнула, потому что он вонял испорченным майонезом. Ощущение, что он недельной давности. Бургеры: вроде ничего, но тоже присутствует запах и привкус испорченной еды, какой-то кислый резкий запах. Поэтому бургер я откусила и желание есть его пропало. Салат Цезарь без соуса! Я все равно съела, потому что креветки и листья салата испортить сложно. И очень странные гренки, они чёрного цвета</p><a class="show-more js-show-more" href="#">Показать полностью</a>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-item holder">
+              <div class="user-side holder">
+                <div class="user-photo"><img src="images/default-photo.png"></div>
+                <div class="user-info"><span class="name">Виктор Васильев</span><span class="date">7 октября</span><span class="time">в 9:14</span></div>
+              </div>
+              <div class="feedback-body">
+                <div class="feedback-header"><span class="mark dislike"><img src="images/icons-07.svg" alt=""></span><strong class="sub-ttl"><a href="#">Большой гурман</a></strong>
+                  <ul class="rating-list">
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li>
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+                <div class="feedback-comment">
+                  <p>заказ не доставлен, деньги не вернули до сих пор! настоятельно не рекомендую этот ресторан для заказа.<br>upd. деньги вернули</p>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-item holder">
+              <div class="user-side holder">
+                <div class="user-photo"><img src="images/user-photo.png"></div>
+                <div class="user-info"><span class="name">Владлена</span><span class="date">7 октября</span><span class="time">в 9:14</span></div>
+              </div>
+              <div class="feedback-body">
+                <div class="feedback-header"><span class="mark like"><img src="images/icons-07.svg" alt=""></span><strong class="sub-ttl"><a href="#">Папа'с Бургерс</a></strong>
+                  <ul class="rating-list">
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                    <li class="active">
+                      <svg>
+                        <use xlink:href="#icons-05"></use>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+                <div class="feedback-comment">
+                  <p>Все отлично!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="description-block">
+          <div class="container flex-container">
+            <div class="description">
+              <p>«Сегодня никого не удивишь различными сервисами доставки еды!», - так считают многие и глубоко ошибаются. Ведь как замечательно насладиться изысканными блюдами из самых<a class="red-color" href="#"> различных ресторанов и кофеен вашего города?</a> Суши, пицца, пироги, напитки на заказ – это уже буквально вчерашний день, а вот полный ассортимент блюд, меню (включая эксклюзивные авторские блюда от именитого шеф-повара) – это огромный шаг вперёд. Вся доставка еды на дом и другие города на страницах нашего сайта. Сервис приёма заказов «ПРИНЕС», как раз и включает в себя большинство перспективных и модных заведений вашего города, которые осуществляют доставку еды на дом.</p>
+            </div>
+            <div class="description">
+              <p>При этом<a class="red-color" href="#"> список интересных заведений</a> постоянно расширяется, что помогает пользователям Интернета, находясь в уютной домашней обстановке, в скучном сером будничном офисе или на зажигательной дружеской вечеринке, осуществить<a class="red-color" href="#"> заказ выбранных блюд</a> прямо «к месту событий». Устройте вашей девушке или молодому человеку романтический ужин, заказав любимую лазанью, ароматный чизкейк или порцию вкуснейших сэндвичей буквально за несколько минут – за пару кликов мышкой!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-area holder">
+            <div class="footer-col"><img class="footer-logo" src="images/logo.png">
+              <ul class="soc-links">
+                <li><a class="fb" href="#">facebook</a></li>
+                <li><a class="tw" href="#">twitter</a></li>
+                <li><a class="vk" href="#">vk</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="footer-menu flex-container">
+                <ul>
+                  <li><a href="#">О проекте</a></li>
+                  <li><a href="#">Контакты</a></li>
+                  <li><a href="#">Информация для партнеров</a></li>
+                  <li><a href="#">Пользовательское соглашение</a></li>
+                  <li><a href="#">Бонусные баллы</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Доставка пиццы</a></li>
+                  <li><a href="#">Доставка суши</a></li>
+                  <li><a href="#">Доставка еды</a></li>
+                  <li><a href="#">Доставка обедов</a></li>
+                  <li><a href="#">Доставка продуктов</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-col"><strong class="phone">8 (800) 550-660-1</strong><a class="red-btn" href="#">Универсальный заказ</a></div>
+          </div>
+          <div class="footer-row holder">
+            <div class="footer-col"><span>© prines.ru, 2016 — 2017.</span></div>
+            <div class="footer-col"><span>Быстрая и качественная доставка вашего заказа</span></div>
+            <div class="footer-col"><span>Дизайн —<a href="#">alexeybychkov.com</a></span></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="login-popup popup" id="login-popup">
+      <div class="popup-heading">
+        <ul>
+          <li class="active">Вход</li>
+          <li><a class="open-popup" href="#register-popup">Регистрация</a></li>
+        </ul>
+      </div>
+      <form action="#">
+        <fieldset>
+          <div class="fields-wrap">
+            <input type="tel" placeholder="Номер телефона">
+            <input type="password" placeholder="Пароль"><a class="reminder red-color" href="#">Напомнить</a>
+          </div>
+          <ul class="soc-links">
+            <li><a class="fb" href="#">facebook</a></li>
+            <li><a class="tw" href="#">twitter</a></li>
+            <li><a class="vk" href="#">vk</a></li>
+            <li><a class="google" href="#">google</a></li>
+            <li><a class="instagram" href="#">instagram</a></li>
+            <li><a class="classmates" href="#">classmates</a></li>
+          </ul>
+          <div class="btn-wrap">
+            <input class="red-btn" type="submit" value="Войти">
+          </div>
+        </fieldset>
+      </form>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="register-popup popup" id="register-popup">
+      <div class="popup-heading">
+        <ul>
+          <li><a class="open-popup" href="#login-popup">Вход</a></li>
+          <li class="active">Регистрация</li>
+        </ul>
+      </div>
+      <form action="#">
+        <fieldset>
+          <div class="fields-wrap">
+            <input type="tel" placeholder="Номер телефона">
+            <input type="password" placeholder="Пароль">
+            <input type="password" placeholder="Пароль еще раз">
+          </div>
+          <div class="checkbox-holder">
+            <input type="checkbox" id="check-agree" checked>
+            <label for="check-agree">Согласен с<a class="red-color" href="#"> правилами сервиса</a></label>
+          </div>
+          <ul class="soc-links">
+            <li><a class="fb" href="#">facebook</a></li>
+            <li><a class="tw" href="#">twitter</a></li>
+            <li><a class="vk" href="#">vk</a></li>
+            <li><a class="google" href="#">google</a></li>
+            <li><a class="instagram" href="#">instagram</a></li>
+            <li><a class="classmates" href="#">classmates</a></li>
+          </ul>
+          <div class="btn-wrap">
+            <input class="red-btn" type="submit" value="Зарегистрироваться">
+          </div>
+        </fieldset>
+      </form>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="payment-popup popup successful">
+      <div class="popup-header"><strong>Подтверждение оплаты</strong></div>
+      <div class="popup-body">
+        <div class="icon">
+          <svg>
+            <use xlink:href="#icons-12"></use>
+          </svg>
+        </div><strong class="title">Оплата прошла успешно!</strong>
+        <p>Спасибо, все в порядке. Наш менеджер свяжется с вами совсем скоро!<br>До связи :)</p><a class="red-btn" href="#">Закрыть</a>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="payment-popup popup failed">
+      <div class="popup-header"><strong>Подтверждение оплаты</strong></div>
+      <div class="popup-body">
+        <div class="icon"><strong>:(</strong></div><strong class="title">Оплата не прошла</strong>
+        <p>Что-то не так. Попробуйте еще раз.</p><a class="red-btn" href="#">Закрыть</a>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="popup-order popup" id="order-popup">
+      <div class="popup-header"><strong>Все о пирогах</strong></div>
+      <div class="popup-main flex-container">
+        <div class="left-col">
+          <div class="section"><strong class="section-ttl js-block-opener opened">Пицца
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block opened">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-1">
+                  <label for="popup-radio-1">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-2" checked>
+                  <label for="popup-radio-2">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-3">
+                  <label for="popup-radio-3">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-4">
+                  <label for="popup-radio-4">Барбекю</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-5">
+                  <label for="popup-radio-5">Вегетарианская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-6">
+                  <label for="popup-radio-6">Гавайская</label>
+                </div>
+                <div class="item-price"><span>+30 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-7">
+                  <label for="popup-radio-7">Гавайская Карри</label>
+                </div>
+                <div class="item-price"><span>+140 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-8">
+                  <label for="popup-radio-8">Де люкс</label>
+                </div>
+                <div class="item-price"><span>+110 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-9">
+                  <label for="popup-radio-9">Калифорния</label>
+                </div>
+                <div class="item-price"><span>+170 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group3" id="popup-radio-10">
+                  <label for="popup-radio-10">Манхеттен</label>
+                </div>
+                <div class="item-price"><span>+230 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="section"><strong class="section-ttl js-block-opener">Тесто
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-11">
+                  <label for="popup-radio-11">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-12" checked>
+                  <label for="popup-radio-12">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group4" id="popup-radio-13">
+                  <label for="popup-radio-13">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="section"><strong class="section-ttl js-block-opener">Ингредиенты
+              <svg>
+                <use xlink:href="#icons-18"></use>
+              </svg></strong>
+            <div class="section-drop js-opened-block">
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-21">
+                  <label for="popup-radio-21">Маргарита</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-22" checked>
+                  <label for="popup-radio-22">Аляска</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+              <div class="holder">
+                <div class="radio-popup-holder">
+                  <input type="radio" name="radio-group5" id="popup-radio-23">
+                  <label for="popup-radio-23">Баварская</label>
+                </div>
+                <div class="item-price"><span>+70 &#x20bd;</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-col"><a class="item-picture" href="#"><img src="images/img03.jpg"></a><strong class="item-cost">300 &#x20bd;</strong>
+          <div class="number-plus-minus">
+            <input type="number" min="1" value="1"><span class="mark-amount">шт</span>
+          </div><a class="red-btn" href="#">Добавить в заказ</a>
+        </div>
+      </div>
+      <button class="close-popup">close</button>
+    </div>
+    <div class="fader"></div>
+  </body>
+</html>
