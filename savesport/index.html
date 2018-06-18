@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Save Sport</title>
+	<link media="all" rel="stylesheet" href="css/style.css"/>
+	<script src="js/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.main.js"></script>
+</head>
+<body>
+<div class="page-wrap">
+	<div class="mob-menu">
+		<div class="mob-tools holder">
+			<div><a class="icon compare" href="#">1</a></div>
+			<div><a class="icon wishlist" href="#">0</a></div>
+			<div><a class="icon search" href="#">search</a></div>
+			<div class="search-container">
+				<form action="#">
+					<fieldset>
+						<div class="holder">
+							<input type="text" placeholder="Поиск"/>
+							<a class="icon close" href="#"></a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<ul class="mob-nav">
+			<li>
+				<a class="open" href="#">ТРЕНАЖЕРЫ</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Кардиотренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Силовые тренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Массажное оборудование</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="open" href="#">ЖЕЛЕЗО</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Кардиотренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Силовые тренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Массажное оборудование</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="open" href="#">ФИТНЕС</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Кардиотренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Массажное оборудование</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="open" href="#">ВИДЫ СПОРТА</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Кардиотренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="open" href="#">Массажное оборудование</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="open" href="#">ТУРИЗМ И ОТДЫХ</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Массажное оборудование</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="open" href="#">ДЕТЯМ</a>
+				<ul>
+					<li>
+						<a class="open" href="#">Кардиотренажеры</a>
+						<ul>
+							<li><a href="#">Беговые дорожки</a></li>
+							<li><a href="#">Эллиптические тренажеры</a></li>
+							<li><a href="#">Велотренажеры</a></li>
+							<li><a href="#">Гребные тренажеры</a></li>
+							<li><a href="#">Степперы</a></li>
+							<li><a href="#">Мини-степперы</a></li>
+							<li><a href="#">Аксессуары</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="enter-wrap">
+			<a href="#">Войти в личный кабинет</a>
+		</div>
+		<strong class="phone">+7 495 374-75-79</strong>
+	</div>
+	<div class="page">
+		<header class="header">
+			<div class="top-header fixed">
+				<div class="wrapper holder">
+					<ul class="menu">
+						<li><a href="#">Кардиотренажеры</a></li>
+						<li><a href="#">Силовые тренажеры</a></li>
+						<li><a href="#">Железо</a></li>
+						<li><a href="#">Красота и здоровье</a></li>
+						<li><a href="#">Детям</a></li>
+						<li><a href="#">Виды спорта</a></li>
+						<li><a href="#">Туризм и отдых</a></li>
+					</ul>
+					<ul class="tools">
+						<li><a class="icon compare" href="#">1</a></li>
+						<li><a class="icon wishlist" href="#">0</a></li>
+						<li><a class="icon cart" href="#">2</a></li>
+						<li><a class="icon login" href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="top-header">
+				<div class="wrapper holder">
+					<ul class="menu">
+						<li><a href="#">О магазине</a></li>
+						<li><a href="#">Оплата</a></li>
+						<li><a href="#">Доставка</a></li>
+						<li><a href="#">Гарантия и сборка</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+					<div class="callback">
+						<strong>+7 495 374-75-79</strong>
+						<a class="open-popup" href="#">Перезвоните мне</a>
+						<div class="popup">
+							<form action="#">
+								<fieldset>
+									<input type="text" placeholder="Телефон"/>
+									<p>Укажите свой контактный телефон,<br /> и мы перезвоним вам в ближайшие<br /> несколько минут</p>
+									<input type="submit" value="Перезвоните мне"/>
+								</fieldset>
+							</form>
+							<a class="icon btn-close" href="#">close</a>
+						</div>
+					</div>
+					<ul class="tools">
+						<li><a class="icon compare" href="#">1</a></li>
+						<li><a class="icon wishlist" href="#">0</a></li>
+						<li><a class="icon cart" href="#">2</a></li>
+						<li><a class="icon login" href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-header">
+				<div class="wrapper holder">
+					<a class="mob-menu-open" href="#">open menu</a>
+					<a class="icon cart" href="#">2</a>
+					<h1 class="logo"><a href="#">save sport</a></h1>
+					<a class="search-toggle icon" href="#">search</a>
+					<ul class="main-nav">
+						<li><a href="#menu1">Тренажеры</a></li>
+						<li><a href="#menu2">Железо</a></li>
+						<li><a href="#menu1">Фитнес</a></li>
+						<li><a href="#menu2">Виды спорта</a></li>
+						<li><a href="#menu1">Туризм и Отдых</a></li>
+						<li><a href="#menu2">Детям</a></li>
+					</ul>
+					<div class="search-wrap">
+						<div class="header-search">
+							<div class="search-form">
+								<form action="#">
+									<fieldset>
+										<div class="holder">
+											<input type="submit" class="icon btn-submit" value="search"/>
+											<input type="text" placeholder="Поиск по каталогу"/>
+										</div>
+									</fieldset>
+								</form>
+								<div class="autocomplete">
+									<ul>
+										<li><a href="#">Беговая дорожка Dfit Atlantica</a></li>
+										<li><a href="#">Беговая дорожка Carbon Yukon HRC+</a></li>
+										<li><a href="#">Беговая дорожка DFC M100</a></li>
+										<li><a href="#">Беговая дорожка Dfit Atlantica</a></li>
+										<li><a href="#">Беговая дорожка Carbon Yukon HRC+</a></li>
+										<li><a href="#">Беговая дорожка Carbon Yukon HRC+</a></li>
+									</ul>
+									<a class="all-results" href="#">Все результаты → </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="drop-down">
+				<div class="wrapper">
+					<div id="menu1" class="drop-menu">
+						<div class="col">
+							<strong>Кардиотренажеры</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+							</ul>
+						</div>
+						<div class="col">
+							<strong>Силовые тренажеры</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+							</ul>
+							<a class="more" href="#">Еще</a>
+						</div>
+						<div class="col">
+							<strong>Массажное оборудование</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="menu2" class="drop-menu">
+						<div class="col">
+							<strong>Кардиотренажеры</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+							</ul>
+						</div>
+						<div class="col">
+							<strong>Силовые тренажеры</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+								<li><a href="#">Степперы</a></li>
+								<li><a href="#">Мини-степперы</a></li>
+								<li><a href="#">Аксессуары</a></li>
+							</ul>
+							<a class="more" href="#">Еще</a>
+						</div>
+						<div class="col">
+							<strong>Массажное оборудование</strong>
+							<ul>
+								<li><a href="#">Беговые дорожки</a></li>
+								<li><a href="#">Эллиптические тренажеры</a></li>
+								<li><a href="#">Велотренажеры</a></li>
+								<li><a href="#">Гребные тренажеры</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="recommend">
+						<span>РЕкомендуем</span>
+						<img src="images/img03.jpg" alt=""/>
+						<div class="name">
+							<span>MATRIX G1-FW155</span>
+							<span>Скамья Скотта</span>
+						</div>
+						<strong class="price">25 000 <span class="rub">P</span></strong>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="slider">
+			<ul>
+				<li>
+					<img src="images/img01.jpg" alt=""/>
+					<div class="text wrapper">
+						<div class="table">
+							<div class="table-cell">
+								<h2>Акция<br/>супер мотивирующая</h2>
+								<a href="#">Возьму две</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="images/img01.jpg" alt=""/>
+					<div class="text wrapper">
+						<div class="table">
+							<div class="table-cell">
+								<h2>Акция<br/>супер мотивирующая</h2>
+								<a href="#">Возьму две</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="images/img01.jpg" alt=""/>
+					<div class="text wrapper">
+						<div class="table">
+							<div class="table-cell">
+								<h2>Акция<br/>супер мотивирующая</h2>
+								<a href="#">Возьму две</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="images/img01.jpg" alt=""/>
+					<div class="text">
+						<div class="table">
+							<div class="table-cell">
+								<h2>Акция<br/>супер мотивирующая</h2>
+								<a href="#">Возьму две</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content-wrap">
+			<section class="main wrapper">
+				<div class="catalog-list holder">
+				<div class="catalog-item">
+					<div class="tag-box">
+						<span class="discount">-25%</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img04.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a href="#">NordicTrack <br/>E12.2</a>
+							</strong>
+							<div class="price">
+								<span class="old-price">133 000</span>
+								<span class="current-price">125 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item white">
+					<div class="tag-box">
+						<span class="recommend">Рекомендуем</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img05.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a href="#">MATRIX G1-FW155 <br />Скамья Скотта</a>
+							</strong>
+							<div class="price">
+								<span class="current-price">125 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item lg">
+					<div class="picture-box">
+						<a href="#"><img src="images/img07.jpg" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<h5>
+							<a href="#">Рельеф</a>
+						</h5>
+						<a href="#">Всё для проработки рельефа</a>
+					</div>
+				</div>
+				<div class="catalog-item lg align-right">
+					<div class="picture-box">
+						<a href="#"><img src="images/img06.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<h5>
+							<a href="#">сушимся</a>
+						</h5>
+						<a href="#">Всё для сушки</a>
+					</div>
+				</div>
+				<div class="catalog-item white subscribe">
+					<div class="subscribe-table">
+						<div class="subscribe-table-cell">
+							<h4>Подпишись<br /> на рассылку</h4>
+							<p>Узнай первым о новинках и закрытых распродажах</p>
+							<div class="form-subscribe">
+								<form action="#">
+									<fieldset>
+										<input type="text" placeholder="Ваш e-mail"/>
+										<input type="submit" value="ок"/>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item">
+					<div class="tag-box">
+						<span class="new">Новинка</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img04.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a  href="#">MATRIX G1-FW155<br /> Скамья Скотта</a>
+							</strong>
+							<div class="price">
+								<span class="current-price">25 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item sale">
+					<a href="#">
+						<div class="sale-table">
+							<div class="sale-table-cell">
+								<h4>Распродажа</h4>
+								<img src="images/img08.jpg" alt=""/>
+								<p>Все блины со скидкой 40% до конца марта</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="catalog-item lg align-right">
+					<div class="picture-box">
+						<a href="#"><img src="images/img09.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<h5>
+							<a href="#">Растем</a>
+						</h5>
+						<a href="#">Всё для набора массы</a>
+					</div>
+				</div>
+				<div class="catalog-item white conditions">
+					<div class="inner-wrap">
+						<h4><a href="#">Бесплатная доставка</a></h4>
+						<p>Мы делаем бесплатную доставку<br /> до вашего подъезда, если сумма заказа превышает 7000 Р</p>
+					</div>
+				</div>
+				<div class="catalog-item">
+					<div class="tag-box">
+						<span class="recommend">Рекомендуем</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img10.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a href="#">MATRIX G1-FW155 <br />Скамья</a>
+							</strong>
+							<div class="price">
+								<span class="current-price">25 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item white conditions">
+					<div class="inner-wrap">
+						<h4><a href="#">Оплата<br /> и возврат</a></h4>
+						<p>Наш интернет-магазин позволяет вернуть товар совершенно бесплатно, в течение 14 дней с момента покупки.</p>
+						<p>Мы предлагаем различные способы оплаты. Вы можете оплачивать покупки как наличными, так и банковскими картами.</p>
+					</div>
+				</div>
+				<div class="catalog-item">
+					<div class="tag-box">
+						<span class="new">Новинка</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img11.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a  href="#">Скамья для пресса<br /> Kettler Lineo </a>
+							</strong>
+							<div class="price">
+								<span class="current-price">125 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				<div class="catalog-item">
+					<div class="tag-box">
+						<span class="discount">-25%</span>
+					</div>
+					<div class="picture-box">
+						<a href="#"><img src="images/img12.png" alt=""/></a>
+					</div>
+					<div class="info-box">
+						<div class="main-info">
+							<strong class="item-name">
+								<a href="#">Скамья Kettler Apollo</a>
+							</strong>
+							<div class="price">
+								<span class="old-price">33 000</span>
+								<span class="current-price">25 000 <span class="rub">P</span></span>
+							</div>
+						</div>
+						<div class="controls-info">
+							<a class="favorites icon" href="#">favorites</a>
+							<a class="compare icon" href="#">compare</a>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="load-more">
+					<a class="icon load" href="#">Хочу еще</a>
+				</div>
+			</section>
+		</div>
+		<footer class="footer">
+			<div class="footer-area wrapper holder">
+				<div class="footer-section">
+					<strong class="footer-ttl">+7 495 374-75-79</strong>
+					<span class="write-email"><a class="icon" href="#">Напишите нам</a></span>
+					<ul class="soc-row holder">
+						<li class="vk"><a href="#">vk</a></li>
+						<li class="twitter"><a href="#">twitter</a></li>
+						<li class="fb"><a href="#">facebook</a></li>
+						<li class="classes"><a href="#">classes</a></li>
+					</ul>
+				</div>
+				<div class="footer-section accordion">
+					<strong class="footer-ttl">SAVE SPORT</strong>
+					<ul class="footer-list">
+						<li><a href="#">О магазине</a></li>
+						<li><a href="#">Акции</a></li>
+					</ul>
+				</div>
+				<div class="footer-section accordion">
+					<strong class="footer-ttl">CЕРВИС</strong>
+					<ul class="footer-list">
+						<li><a href="#">Как заказать</a></li>
+						<li><a href="#">Доставка</a></li>
+						<li><a href="#">Оплата</a></li>
+						<li><a href="#">Гарантия и сборка</a></li>
+						<li><a href="#">Возврат</a></li>
+					</ul>
+				</div>
+				<div class="footer-section accordion">
+					<strong class="footer-ttl">ПОМОЩЬ</strong>
+					<ul class="footer-list">
+						<li><a href="#">Контакты</a></li>
+						<li><a href="#">Вопросы и ответы</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<strong class="footer-ttl">Мы на маркете</strong>
+					<div class="market-rating holder">
+						<ul>
+							<li class="active"></li>
+							<li class="active"></li>
+							<li class="active"></li>
+							<li class="active"></li>
+							<li></li>
+						</ul>
+						<span>35 отзывов</span>
+					</div>
+				</div>
+				<div class="footer-section hidden holder">
+					<strong class="footer-ttl">+7 495 374-75-79</strong>
+					<ul class="soc-row holder">
+						<li class="vk"><a href="#">vk</a></li>
+						<li class="twitter"><a href="#">twitter</a></li>
+						<li class="fb"><a href="#">facebook</a></li>
+						<li class="classes"><a href="#">classes</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="wrapper holder">
+					<span class="left-align">2014—2015 © savesport</span>
+					<span class="center-align"><img src="images/footer-img.png" alt=""/></span>
+					<span class="right-align">Создание сайта — <a href="#">Openup group</a></span>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+</body>
+</html>
